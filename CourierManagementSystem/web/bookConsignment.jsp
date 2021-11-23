@@ -45,27 +45,52 @@
                 out.print("<script>alert('Consignment has been successfully booked')</script>");
   
             %>
-            <div id="printSticker" >  
-                <fieldset style="all: revert; font-weight: 600;">
-                    <legend style="all: revert;">Personal Information:</legend>
-                    First Name: Soura <br>
+            <div id="printSticker">
+                <div style="margin: 20px 0;display: flex;justify-content: space-evenly;" class="row">  
+                    <fieldset style="all: revert; font-weight: 600;width: fit-content;" class="col-6">
+                        <legend style="all: revert;">Consignment Details:</legend>
+                        Consignment ID: AEGD74595WB <br>
 
-                    Middle Name: Sankar <br>
+                        Middle Name: Sankar <br>
 
-                    Last Name: Mondal <br>
+                        Last Name: Mondal <br>
 
-                    Email: soura.kootty4@gmail.com <br>
+                        Email: soura.kootty4@gmail.com <br>
 
-                    Phone: 9051688818 <br>
+                        Phone: 9051688818 <br>
 
-                    Date of birth: 08/06/2000 
+                        Date of birth: 08/06/2000 
 
-              </fieldset>
-            </div>>
-            
-            <input type="button" onclick="printSticker()" value="click">
-       
-                
+                    </fieldset>
+                    <fieldset style="all: revert; font-weight: 600;width: fit-content;" class="col-6">
+                        <legend style="all: revert;">Ship To:</legend>
+                        Soura Sankar Mondal <br>
+
+                        <u>Address:</u><br>Bali Kali Tala,<br>P.O & Dist- Hooghly,<br>
+                        Hooghly, West Bengal, 712103<br>
+
+                  </fieldset>
+                    <fieldset style="all: revert; font-weight: 600;width: fit-content;" class="col-6">
+                        <legend style="all: revert;">Shipped By:</legend>
+                        First Name: Soura <br>
+
+                        Middle Name: Sankar <br>
+
+                        Last Name: Mondal <br>
+
+                        Email: soura.kootty4@gmail.com <br>
+
+                        Phone: 9051688818 <br>
+
+                        Date of birth: 08/06/2000 
+
+                  </fieldset>
+                    
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 20px;">
+                <button type="button" class="btn btn-danger col-2" onclick="printSticker()">Print</button>
+            </div>       
                 
             <%
             }
@@ -255,7 +280,7 @@
                 </div>
                     
                 <div class="text-center" style="margin-top: 20px;">
-                    <button type="submit" class="btn btn-primary col-3" id="submit" name="submit" value="submit">Book Consignment</button>
+                    <button type="submit" class="btn btn-primary col-2" id="submit" name="submit" value="submit">Book Consignment</button>
                     
                 </div>                           
 
