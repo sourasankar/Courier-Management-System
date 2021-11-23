@@ -45,19 +45,27 @@
                 out.print("<script>alert('Consignment has been successfully booked')</script>");
   
             %>
-              
+            <div id="printSticker" >  
+                <fieldset style="all: revert; font-weight: 600;">
+                    <legend style="all: revert;">Personal Information:</legend>
+                    First Name: Soura <br>
+
+                    Middle Name: Sankar <br>
+
+                    Last Name: Mondal <br>
+
+                    Email: soura.kootty4@gmail.com <br>
+
+                    Phone: 9051688818 <br>
+
+                    Date of birth: 08/06/2000 
+
+              </fieldset>
+            </div>>
+            
+            <input type="button" onclick="printSticker()" value="click">
        
-                First Name: 
                 
-                Middle Name: 
-                
-                Last Name: 
-                
-                Email: 
-                
-                Phone: 
-                
-                Date of birth: 
                 
             <%
             }
@@ -431,6 +439,17 @@
           }
           document.getElementById(optionDistrict).innerHTML=htmlString;
 
+        }
+        
+        function printSticker() {
+            var divContents = document.getElementById("printSticker").innerHTML;
+            var a = window.open('', '', '');
+            a.document.write('<html>');
+            a.document.write('<body >');
+            a.document.write(divContents);
+            a.document.write('</body></html>');
+            a.document.close();
+            a.print();
         }
     </script>
 
