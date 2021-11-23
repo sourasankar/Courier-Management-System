@@ -46,45 +46,35 @@
   
             %>
             <div id="printSticker">
-                <div style="margin: 20px 0;display: flex;justify-content: space-evenly;" class="row">  
+                <div style="margin: 20px 0;display: flex;justify-content: space-evenly;" class="row"> 
+                    
                     <fieldset style="all: revert; font-weight: 600;width: fit-content;" class="col-6">
-                        <legend style="all: revert;">Consignment Details:</legend>
+                        <legend style="all: revert;">Consignment Tag:</legend>
                         Consignment ID: AEGD74595WB <br>
-
-                        Middle Name: Sankar <br>
-
-                        Last Name: Mondal <br>
-
-                        Email: soura.kootty4@gmail.com <br>
-
-                        Phone: 9051688818 <br>
-
-                        Date of birth: 08/06/2000 
-
+                        Weight: 15gm<br><br>
+                        <u>Ship To:</u><br>
+                        Soura Sankar Mondal<br>
+                        Bali Kali Tala,<br>P.O & Dist- Hooghly,<br>
+                        Hooghly, West Bengal, 712103<br><br>
+                        <u>From:</u><br>
+                        Uday Sankar Mondal<br>
+                        Bali Kali Tala,<br>P.O & Dist- Hooghly,<br>
+                        Hooghly, West Bengal, 712103<br>                       
+                    </fieldset>                    
+                    <fieldset style="all: revert; font-weight: 600;width: fit-content;" class="col-6">
+                        <legend style="all: revert;">Customer Receipt:</legend>
+                        Consignment ID: AEGD74595WB <br>
+                        Dimension: 12x14x9cm<br>
+                        Weight: 15gm<br>
+                        Amount: 125/-<br>
+                        Date & Time: 20-Nov-2021 13:45:47<br><br>
+                        <u>Ship To:</u><br>
+                        Soura Sankar Mondal<br>
+                        Bali Kali Tala,<br>P.O & Dist- Hooghly,<br>
+                        Hooghly, West Bengal, 712103<br><br>
+                        <u>From:</u><br>
+                        Uday Sankar Mondal
                     </fieldset>
-                    <fieldset style="all: revert; font-weight: 600;width: fit-content;" class="col-6">
-                        <legend style="all: revert;">Ship To:</legend>
-                        Soura Sankar Mondal <br>
-
-                        <u>Address:</u><br>Bali Kali Tala,<br>P.O & Dist- Hooghly,<br>
-                        Hooghly, West Bengal, 712103<br>
-
-                  </fieldset>
-                    <fieldset style="all: revert; font-weight: 600;width: fit-content;" class="col-6">
-                        <legend style="all: revert;">Shipped By:</legend>
-                        First Name: Soura <br>
-
-                        Middle Name: Sankar <br>
-
-                        Last Name: Mondal <br>
-
-                        Email: soura.kootty4@gmail.com <br>
-
-                        Phone: 9051688818 <br>
-
-                        Date of birth: 08/06/2000 
-
-                  </fieldset>
                     
                 </div>
             </div>
