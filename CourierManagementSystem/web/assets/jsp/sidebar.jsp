@@ -22,6 +22,29 @@
           <span>Book Consignment</span>
         </a>
       </li><!-- End F.A.Q Page Nav -->
+      
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="bookConsignment.jsp">
+          <i class="bi bi-question-circle"></i>
+          <span>Receive Consignment</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="bookConsignment.jsp">
+          <i class="bi bi-question-circle"></i>
+          <span>Transit Consignment</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="bookConsignment.jsp">
+          <i class="bi bi-question-circle"></i>
+          <span>Deliver Consignment</span>
+        </a>
+      </li>
+      
+      <li class="nav-heading">Pages</li>      
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="users-profile.html">
