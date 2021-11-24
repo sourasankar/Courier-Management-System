@@ -45,12 +45,13 @@
                 out.print("<script>alert('Consignment has been successfully booked')</script>");
   
             %>
-            <div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show" role="alert">
+            <div class="alert alert-success alert-dismissible fade show col-md-8 col-xl-6 text-center mx-auto" style="margin-top: 20px;" role="alert">
+                <i class="bi bi-check-circle me-1"></i>
                 Consignment has been successfully booked
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-            <div id="printSticker">
-                <div style="margin: 20px 0;display: flex;justify-content: space-evenly;" class="row"> 
+            <div id="printSticker" style="margin: 20px 0;">
+                <div style="display: flex;justify-content: space-evenly;" class="row"> 
                     
                     <fieldset style="all: revert; font-weight: 600;width: fit-content;" class="col-6">
                         <legend style="all: revert;">Consignment Tag:</legend>
