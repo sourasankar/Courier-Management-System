@@ -14,7 +14,6 @@
   <!-- Vendor CSS Files -->
   <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/27e7a28bb1.js" crossorigin="anonymous"></script>
   <!-- <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
