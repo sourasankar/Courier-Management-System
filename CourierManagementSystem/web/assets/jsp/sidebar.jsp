@@ -18,28 +18,28 @@
       
       <li class="nav-item">
         <a class="nav-link collapsed" href="bookConsignment.jsp">
-          <i class="bi bi-question-circle"></i>
+          <i class="bi bi-cart-plus"></i>
           <span>Book Consignment</span>
         </a>
       </li><!-- End F.A.Q Page Nav -->
       
       <li class="nav-item">
         <a class="nav-link collapsed" href="bookConsignment.jsp">
-          <i class="bi bi-question-circle"></i>
+          <i class="bi bi-clipboard-check"></i>
           <span>Receive Consignment</span>
         </a>
       </li>
       
       <li class="nav-item">
         <a class="nav-link collapsed" href="bookConsignment.jsp">
-          <i class="bi bi-question-circle"></i>
+          <i class="bi bi-truck"></i>
           <span>Transit Consignment</span>
         </a>
       </li>
       
       <li class="nav-item">
         <a class="nav-link collapsed" href="bookConsignment.jsp">
-          <i class="bi bi-question-circle"></i>
+          <i class="bi bi-boxes"></i>
           <span>Deliver Consignment</span>
         </a>
       </li>
