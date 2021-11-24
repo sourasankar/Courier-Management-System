@@ -58,8 +58,8 @@
           </div>
             
             <%
-            //if(request.getMethod().equals("GET")){ 
-            //if(request.getParameter("submit")!=null){
+            if(request.getMethod().equals("POST")){ 
+                if(request.getParameter("submit")!=null){
             %>
             
             <div class="card">
@@ -70,23 +70,22 @@
 
                     <h5 class="card-title">Package Details</h5>
 
-                    <div style="display: flex;">
-                        <fieldset style="all: revert; font-weight: 600;width: fit-content;" class="col-6">
-                            <legend style="all: revert;">Consignment Tag:</legend>
+                    <div style="display: flex;justify-content: center;">
+                        <fieldset style="all: revert; font-weight: 600;" class="col-6">
+                            <legend style="all: revert;">Consignment Details:</legend>
                             Consignment ID: AEGD74595WB <br>
-                            Weight: 15gm<br><br>
+                            Dimension: 12x14x9cm<br>
+                            Weight: 15gm<br>
+                            Amount: 125/-<br>
+                            Book at: Hooghly H.O<br><br>
                             <u>Ship To:</u><br>
                             Soura Sankar Mondal<br>
                             Bali Kali Tala,<br>P.O & Dist- Hooghly,<br>
-                            Hooghly, West Bengal, 712103<br><br>
-                            <u>From:</u><br>
-                            Uday Sankar Mondal<br>
-                            Bali Kali Tala,<br>P.O & Dist- Hooghly,<br>
-                            Hooghly, West Bengal, 712103<br>                       
+                            Hooghly, West Bengal, 712103                       
                         </fieldset>   
                     </div>
                     <div class="text-center" style="margin-top: 20px;">
-                            <button type="submit" class="btn btn-primary col-6 col-md-4 col-lg-3 col-xxl-2" id="submit" name="submit" value="submit">Receive Consignment</button>
+                            <button type="submit" class="btn btn-primary col-6 col-md-4 col-lg-3 col-xxl-2" id="receiveConsignment" name="receiveConsignment" value="receiveConsignment">Receive Consignment</button>
                     </div>
 
                   </form><!-- End Multi Columns Form -->
@@ -95,7 +94,16 @@
             </div>
             
             <%
-            //}    
+            }
+            if(request.getParameter("receiveConsignment")!=null){
+            %>
+            <div class="alert alert-success alert-dismissible fade show col-md-8 col-xl-6 text-center mx-auto" style="margin-top: 20px;" role="alert">
+                <i class="bi bi-check-circle me-1"></i>
+                Consignment has been Received and added to Inventory
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <%
+            } }
             %>
             
           
