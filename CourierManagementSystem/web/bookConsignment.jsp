@@ -45,6 +45,10 @@
                 out.print("<script>alert('Consignment has been successfully booked')</script>");
   
             %>
+            <div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show" role="alert">
+                Consignment has been successfully booked
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
             <div id="printSticker">
                 <div style="margin: 20px 0;display: flex;justify-content: space-evenly;" class="row"> 
                     
