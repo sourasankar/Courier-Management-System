@@ -24,7 +24,7 @@
       </li><!-- End F.A.Q Page Nav -->
       
       <li class="nav-item">
-        <a class="nav-link collapsed" href="bookConsignment.jsp">
+        <a class="nav-link collapsed" href="receiveConsignment.jsp">
           <i class="bi bi-clipboard-check"></i>
           <span>Receive Consignment</span>
         </a>

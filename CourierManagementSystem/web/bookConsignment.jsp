@@ -42,7 +42,7 @@
             <%
             //if(request.getMethod().equals("GET")){ 
             if(request.getParameter("submit")!=null){
-                out.print("<script>alert('Consignment has been successfully booked')</script>");
+//                out.print("<script>alert('Consignment has been successfully booked')</script>");
   
             %>
             <div class="alert alert-success alert-dismissible fade show col-md-8 col-xl-6 text-center mx-auto" style="margin-top: 20px;" role="alert">
@@ -93,7 +93,7 @@
             %>
             
               <!-- Multi Columns Form -->
-              <form method="POST" action="">
+              <form method="POST" action="bookConsignment.jsp">
                   
                   <h5 class="card-title">Package Details</h5>
                   
@@ -193,7 +193,7 @@
                     </div>             
                     <div class="col-md-4">
                       <label for="topincode" class="form-label">Zip  <span style="color: red;">*</span></label>
-                      <input type="text" class="form-control" id="topincode" name="topincode" pattern="^(\d{6})" required>
+                      <input type="number" class="form-control" id="topincode" name="topincode" pattern="^(\d{6})" required>
                     </div>
                     
                 </div>
@@ -269,13 +269,13 @@
                     </div>             
                     <div class="col-md-4">
                       <label for="frompincode" class="form-label">Zip  <span style="color: red;">*</span></label>
-                      <input type="text" class="form-control" id="frompincode" name="frompincode" pattern="^(\d{6})" required>
+                      <input type="number" class="form-control" id="frompincode" name="frompincode" pattern="^(\d{6})" required>
                     </div>
                     
                 </div>
                     
                 <div class="text-center" style="margin-top: 20px;">
-                    <button type="submit" class="btn btn-primary col-2" id="submit" name="submit" value="submit">Book Consignment</button>
+                    <button type="submit" class="btn btn-primary col-6 col-md-4 col-lg-3 col-xxl-2" id="submit" name="submit" value="submit">Book Consignment</button>
                     
                 </div>                           
 
