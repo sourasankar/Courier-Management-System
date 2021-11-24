@@ -127,24 +127,24 @@
                 <div class="row g-2">
                   
                     <div class="col-md-6">
-                      <label for="toname" class="form-label">Receiver Name  <span style="color: red;">*</span></label>
-                      <input type="text" class="form-control" id="toname" name="toname" required>
+                      <label for="toName" class="form-label">Receiver Name  <span style="color: red;">*</span></label>
+                      <input type="text" class="form-control" id="toName" name="toName" required>
                     </div>
                     <div class="col-md-6">
-                      <label for="tophone" class="form-label">Phone No</label>
-                      <input type="phone" class="form-control" id="tophone" name="tophone">
+                      <label for="toPhone" class="form-label">Phone No</label>
+                      <input type="phone" class="form-control" id="toPhone" name="toPhone">
                     </div>
                     <div class="col-lg-6">
-                      <label for="toaddress1" class="form-label">Address <span style="color: red;">*</span></label>
-                      <input type="text" class="form-control" id="toaddress1" name="toaddress1" required>
+                      <label for="toAddress1" class="form-label">Address <span style="color: red;">*</span></label>
+                      <input type="text" class="form-control" id="toAddress1" name="toAddress1" required>
                     </div>
                     <div class="col-lg-6">
-                      <label for="toaddress2" class="form-label">Address 2</label>
-                      <input type="text" class="form-control" id="toaddress2" name="toaddress2">
+                      <label for="toAddress2" class="form-label">Address 2</label>
+                      <input type="text" class="form-control" id="toAddress2" name="toAddress2">
                     </div>
                     <div class="col-sm-6 col-md-4">
-                      <label for="tostate" class="form-label">State  <span style="color: red;">*</span></label>
-                      <select id="tostate" onchange="district(this.value,'todistrict')" name="tostate" class="form-select" required>
+                      <label for="toState" class="form-label">State  <span style="color: red;">*</span></label>
+                      <select id="toState" onchange="district(this.value,'toDistrict')" name="toState" class="form-select" required>
                         <option value="">Choose...</option>
                         <option value="Andhra Pradesh">Andhra Pradesh</option>
                         <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
@@ -185,15 +185,15 @@
                       </select>
                     </div>
                     <div class="col-sm-6 col-md-4">
-                      <label for="todistrict" class="form-label">District  <span style="color: red;">*</span></label>
-                      <select id="todistrict" name="todistrict" class="form-select" required>
+                      <label for="toDistrict" class="form-label">District  <span style="color: red;">*</span></label>
+                      <select id="toDistrict" name="toDistrict" class="form-select" required>
                         <option value="">Choose...</option>
                         <option>...</option>
                       </select>
                     </div>             
                     <div class="col-md-4">
-                      <label for="topincode" class="form-label">Zip  <span style="color: red;">*</span></label>
-                      <input type="number" class="form-control" id="topincode" name="topincode" pattern="^(\d{6})" required>
+                      <label for="toPincode" class="form-label">Zip  <span style="color: red;">*</span></label>
+                      <input type="number" class="form-control" id="toPincode" name="toPincode" pattern="^(\d{6})" required>
                     </div>
                     
                 </div>
@@ -203,24 +203,24 @@
                 <div class="row g-2">
                   
                     <div class="col-md-6">
-                      <label for="fromname" class="form-label">Sender Name  <span style="color: red;">*</span></label>
-                      <input type="text" class="form-control" id="fromname" name="fromname" required>
+                      <label for="fromName" class="form-label">Sender Name  <span style="color: red;">*</span></label>
+                      <input type="text" class="form-control" id="fromName" name="fromName" required>
                     </div>
                     <div class="col-md-6">
-                      <label for="fromphone" class="form-label">Phone No</label>
-                      <input type="phone" class="form-control" id="fromphone" name="fromphone">
+                      <label for="fromPhone" class="form-label">Phone No</label>
+                      <input type="phone" class="form-control" id="fromPhone" name="fromPhone">
                     </div>
                     <div class="col-lg-6">
-                      <label for="fromaddress1" class="form-label">Address  <span style="color: red;">*</span></label>
-                      <input type="text" class="form-control" id="fromaddress1" name="fromaddress1" required>
+                      <label for="fromAddress1" class="form-label">Address  <span style="color: red;">*</span></label>
+                      <input type="text" class="form-control" id="fromAddress1" name="fromAddress1" required>
                     </div>
                     <div class="col-lg-6">
-                      <label for="fromaddress2" class="form-label">Address 2</label>
-                      <input type="text" class="form-control" id="fromaddress2" name="fromaddress2">
+                      <label for="fromAddress2" class="form-label">Address 2</label>
+                      <input type="text" class="form-control" id="fromAddress2" name="fromAddress2">
                     </div>
                     <div class="col-sm-6 col-md-4">
-                      <label for="fromstate" class="form-label">State  <span style="color: red;">*</span></label>
-                      <select id="fromstate" onchange="district(this.value,'fromdistrict')" name="fromstate" class="form-select" required>
+                      <label for="fromState" class="form-label">State  <span style="color: red;">*</span></label>
+                      <select id="fromState" onchange="district(this.value,'fromDistrict')" name="fromState" class="form-select" required>
                         <option value="">Choose...</option>
                         <option value="Andhra Pradesh">Andhra Pradesh</option>
                         <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
@@ -261,15 +261,15 @@
                       </select>
                     </div>
                     <div class="col-sm-6 col-md-4">
-                      <label for="fromdistrict" class="form-label">District  <span style="color: red;">*</span></label>
-                      <select id="fromdistrict" name="fromdistrict" class="form-select" required>
+                      <label for="fromDistrict" class="form-label">District  <span style="color: red;">*</span></label>
+                      <select id="fromDistrict" name="fromDistrict" class="form-select" required>
                         <option value="">Choose...</option>
                         <option>...</option>
                       </select>
                     </div>             
                     <div class="col-md-4">
-                      <label for="frompincode" class="form-label">Zip  <span style="color: red;">*</span></label>
-                      <input type="number" class="form-control" id="frompincode" name="frompincode" pattern="^(\d{6})" required>
+                      <label for="fromPincode" class="form-label">Zip  <span style="color: red;">*</span></label>
+                      <input type="number" class="form-control" id="fromPincode" name="fromPincode" pattern="^(\d{6})" required>
                     </div>
                     
                 </div>

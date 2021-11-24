@@ -54,32 +54,16 @@
             %>
             
               <!-- Multi Columns Form -->
-              <form method="POST" action="">
+              <form method="POST" action="receiveConsignment.jsp">
                   
                   <h5 class="card-title">Package Details</h5>
                   
                   <div class="row g-2">
                       
                     <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                      <label for="length" class="form-label">Length (cm) <span style="color: red;">*</span></label>
+                      <label for="consignmentId" class="form-label">Length (cm) <span style="color: red;">*</span></label>
                       <input type="number" class="form-control" id="length" name="length" required>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                      <label for="width" class="form-label">Width (cm) <span style="color: red;">*</span></label>
-                      <input type="number" class="form-control" id="width" name="width" required>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                      <label for="height" class="form-label">Height (cm) <span style="color: red;">*</span></label>
-                      <input type="number" class="form-control" id="height" name="height" required>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                      <label for="weight" class="form-label">Weight (gm) <span style="color: red;">*</span></label>
-                      <input type="number" class="form-control" id="weight" name="weight" required>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                      <label for="amount" class="form-label">Amount (Rs) <span style="color: red;">*</span></label>
-                      <input type="number" class="form-control" id="amount" name="amount" required>
-                    </div>
+                    </div>                    
                       
                   </div>
                   
