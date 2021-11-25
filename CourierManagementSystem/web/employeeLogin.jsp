@@ -45,16 +45,16 @@
                     <form method="POST" action="employeeLogin.jsp" class="row g-3">
 
                     <div class="col-12">
-                      <label for="username" class="form-label">Username</label>
+                      <label for="employeeUsername" class="form-label">Username</label>
                       <div class="input-group">
-                        <input type="text" name="username" class="form-control" id="username" required>
+                        <input type="text" name="employeeUsername" class="form-control" id="employeeUsername" required>
                         <div class="invalid-feedback">Please enter your username.</div>
                       </div>
                     </div>
 
                     <div class="col-12">
-                      <label for="password" class="form-label">Password</label>
-                      <input type="password" name="passwword" class="form-control" id="password" required>
+                      <label for="employeePassword" class="form-label">Password</label>
+                      <input type="password" name="employeePassword" class="form-control" id="employeePassword" required>
                       <div class="invalid-feedback">Please enter your password!</div>
                     </div>
 

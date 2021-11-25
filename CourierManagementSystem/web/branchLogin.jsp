@@ -45,16 +45,16 @@
                     <form method="POST" action="branchLogin.jsp" class="row g-3">
 
                     <div class="col-12">
-                      <label for="username" class="form-label">Username</label>
+                      <label for="branchUsername" class="form-label">Username</label>
                       <div class="input-group">
-                        <input type="text" name="username" class="form-control" id="username" required>
+                        <input type="text" name="branchUsername" class="form-control" id="branchUsername" required>
                         <div class="invalid-feedback">Please enter your username.</div>
                       </div>
                     </div>
 
                     <div class="col-12">
-                      <label for="password" class="form-label">Password</label>
-                      <input type="password" name="passwword" class="form-control" id="password" required>
+                      <label for="branchPassword" class="form-label">Password</label>
+                      <input type="password" name="branchPassword" class="form-control" id="branchPassword" required>
                       <div class="invalid-feedback">Please enter your password!</div>
                     </div>
 
