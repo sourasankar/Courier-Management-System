@@ -74,13 +74,7 @@
       </section>
 
     </div>
-  </main>
-    
-    <script>
-        if ( window.history.replaceState ) {
-            window.history.replaceState( null, null, window.location.href );
-        }
-    </script>
+  </main>   
     
   <jsp:include page="assets/jsp/footer.jsp" />
 

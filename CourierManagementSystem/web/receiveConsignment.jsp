@@ -107,12 +107,6 @@
         </div>        
     
   </main><!-- End #main -->
-  
-    <script>
-        if ( window.history.replaceState ) {
-            window.history.replaceState( null, null, window.location.href );
-        }
-    </script>
 
   <jsp:include page="assets/jsp/footer.jsp" />
 

@@ -7,6 +7,11 @@
 <!-- <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> -->
 
   <!-- Vendor JS Files -->
+  <script>
+        if ( window.history.replaceState ) {
+            window.history.replaceState( null, null, window.location.href );
+        }
+  </script>
   <script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
   <!-- <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/quill/quill.min.js"></script>

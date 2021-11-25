@@ -45,6 +45,13 @@
       </li>
       
       <li class="nav-heading">Manage Employee</li>
+      
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="manageEmployee.jsp">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Manage Employee</span>
+        </a>
+      </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="branchLogin.jsp">
