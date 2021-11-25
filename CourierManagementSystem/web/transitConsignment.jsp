@@ -46,7 +46,7 @@
 
                     <h5 class="card-title">Package Details</h5>
 
-                    <div style="display: flex;justify-content: center;">
+                    <div class="row" style="display: flex;justify-content: space-evenly;">
                         <fieldset style="all: revert; font-weight: 600;" class="col-6">
                             <legend style="all: revert;">Consignment Details:</legend>
                             Consignment ID: AEGD74595WB <br>
@@ -58,7 +58,14 @@
                             Soura Sankar Mondal<br>
                             Bali Kali Tala,<br>P.O & Dist- Hooghly,<br>
                             Hooghly, West Bengal, 712103                       
-                        </fieldset>   
+                        </fieldset>
+                        <fieldset style="all: revert; font-weight: 600;" class="col-6">
+                            <legend style="all: revert;">Next Transit Location:</legend>                            
+                            <br><br><u>Transit To:</u><br>
+                            Kolkata H.O<br>
+                            Bali Kali Tala,<br>P.O & Dist- Hooghly,<br>
+                            Hooghly, West Bengal, 712103                       
+                        </fieldset>
                     </div>
                     <div class="text-center" style="margin-top: 20px;">
                         <form method="POST" action="transitConsignment.jsp">
