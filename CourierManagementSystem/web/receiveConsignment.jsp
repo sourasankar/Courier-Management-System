@@ -58,16 +58,12 @@
           </div>
             
             <%
-            if(request.getMethod().equals("POST")){ 
-                if(request.getParameter("submit")!=null){
+            if(request.getParameter("submit")!=null && request.getMethod().equals("POST")){
             %>
             
             <div class="card">
                 <div class="card-body">
-
-                  <!-- Multi Columns Form -->
-                  <form method="POST" action="receiveConsignment.jsp">
-
+                    
                     <h5 class="card-title">Package Details</h5>
 
                     <div style="display: flex;justify-content: center;">
@@ -85,25 +81,25 @@
                         </fieldset>   
                     </div>
                     <div class="text-center" style="margin-top: 20px;">
-                            <button type="submit" class="btn btn-primary col-6 col-md-4 col-lg-3 col-xxl-2" id="receiveConsignment" name="receiveConsignment" value="receiveConsignment">Receive Consignment</button>
+                        <form method="POST" action="receiveConsignment.jsp">
+                            <button type="submit" class="btn btn-primary col-6 col-md-4 col-lg-3 col-xxl-2" id="receiveConsignment" name="receiveConsignment" value="fdsfdsdfsf">Receive Consignment</button>
+                        </form>
                     </div>
-
-                  </form><!-- End Multi Columns Form -->
-
+                 
                 </div>
             </div>
             
             <%
             }
-            if(request.getParameter("receiveConsignment")!=null){
+            if(request.getParameter("receiveConsignment")!=null && request.getMethod().equals("POST")){
             %>
             <div class="alert alert-success alert-dismissible fade show col-md-8 col-xl-6 text-center mx-auto" style="margin-top: 20px;" role="alert">
                 <i class="bi bi-check-circle me-1"></i>
-                Consignment has been Received and added to Inventory
+                Consignment has been Received and Added to Inventory
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             <%
-            } }
+            }
             %>
             
           

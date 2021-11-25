@@ -31,7 +31,7 @@
       </li>
       
       <li class="nav-item">
-        <a class="nav-link collapsed" href="bookConsignment.jsp">
+        <a class="nav-link collapsed" href="transitConsignment.jsp">
           <i class="bi bi-truck"></i>
           <span>Transit Consignment</span>
         </a>
