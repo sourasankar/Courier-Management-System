@@ -39,53 +39,50 @@
           <div class="card">
             <div class="card-body">
                 
-            <%
-            //if(request.getMethod().equals("GET")){ 
-            if(request.getParameter("submit")!=null){
-//                out.print("<script>alert('Consignment has been successfully booked')</script>");
-  
+            <% 
+            if(request.getParameter("submit")!=null && request.getMethod().equals("POST")){  
             %>
-            <div class="alert alert-success alert-dismissible fade show col-md-8 col-xl-6 text-center mx-auto" style="margin-top: 20px;" role="alert">
-                <i class="bi bi-check-circle me-1"></i>
-                Consignment has been successfully booked
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            <div id="printSticker" style="margin: 20px 0;">
-                <div style="display: flex;justify-content: space-evenly;" class="row"> 
-                    
-                    <fieldset style="all: revert; font-weight: 600;width: fit-content;" class="col-6">
-                        <legend style="all: revert;">Consignment Tag:</legend>
-                        Consignment ID: AEGD74595WB <br>
-                        Weight: 15gm<br><br>
-                        <u>Ship To:</u><br>
-                        Soura Sankar Mondal<br>
-                        Bali Kali Tala,<br>P.O & Dist- Hooghly,<br>
-                        Hooghly, West Bengal, 712103<br><br>
-                        <u>From:</u><br>
-                        Uday Sankar Mondal<br>
-                        Bali Kali Tala,<br>P.O & Dist- Hooghly,<br>
-                        Hooghly, West Bengal, 712103<br>                       
-                    </fieldset>                    
-                    <fieldset style="all: revert; font-weight: 600;width: fit-content;" class="col-6">
-                        <legend style="all: revert;">Customer Receipt:</legend>
-                        Consignment ID: AEGD74595WB <br>
-                        Dimension: 12x14x9cm<br>
-                        Weight: 15gm<br>
-                        Amount: 125/-<br>
-                        Date & Time: 20-Nov-2021 13:45:47<br><br>
-                        <u>Ship To:</u><br>
-                        Soura Sankar Mondal<br>
-                        Bali Kali Tala,<br>P.O & Dist- Hooghly,<br>
-                        Hooghly, West Bengal, 712103<br><br>
-                        <u>From:</u><br>
-                        Uday Sankar Mondal
-                    </fieldset>
-                    
+                <div class="alert alert-success alert-dismissible fade show col-md-8 col-xl-6 text-center mx-auto" style="margin-top: 20px;" role="alert">
+                    <i class="bi bi-check-circle me-1"></i>
+                    Consignment has been successfully booked
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-            </div>
-            <div class="text-center" style="margin-top: 20px;">
-                <button type="button" class="btn btn-danger col-2" onclick="printSticker()">Print</button>
-            </div>       
+                <div id="printSticker" style="margin: 20px 0;">
+                    <div style="display: flex;justify-content: space-evenly;" class="row"> 
+
+                        <fieldset style="all: revert; font-weight: 600;width: fit-content;" class="col-6">
+                            <legend style="all: revert;">Consignment Tag:</legend>
+                            Consignment ID: AEGD74595WB <br>
+                            Weight: 15gm<br><br>
+                            <u>Ship To:</u><br>
+                            Soura Sankar Mondal<br>
+                            Bali Kali Tala,<br>P.O & Dist- Hooghly,<br>
+                            Hooghly, West Bengal, 712103<br><br>
+                            <u>From:</u><br>
+                            Uday Sankar Mondal<br>
+                            Bali Kali Tala,<br>P.O & Dist- Hooghly,<br>
+                            Hooghly, West Bengal, 712103<br>                       
+                        </fieldset>                    
+                        <fieldset style="all: revert; font-weight: 600;width: fit-content;" class="col-6">
+                            <legend style="all: revert;">Customer Receipt:</legend>
+                            Consignment ID: AEGD74595WB <br>
+                            Dimension: 12x14x9cm<br>
+                            Weight: 15gm<br>
+                            Amount: 125/-<br>
+                            Date & Time: 20-Nov-2021 13:45:47<br><br>
+                            <u>Ship To:</u><br>
+                            Soura Sankar Mondal<br>
+                            Bali Kali Tala,<br>P.O & Dist- Hooghly,<br>
+                            Hooghly, West Bengal, 712103<br><br>
+                            <u>From:</u><br>
+                            Uday Sankar Mondal
+                        </fieldset>
+
+                    </div>
+                </div>
+                <div class="text-center" style="margin-top: 20px;">
+                    <button type="button" class="btn btn-danger col-2" onclick="printSticker()">Print</button>
+                </div>       
                 
             <%
             }

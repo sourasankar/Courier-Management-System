@@ -1,5 +1,5 @@
 <%-- 
-    Document   : login
+    Document   : branchLogin
     Created on : Nov 22, 2021, 8:01:00 PM
     Author     : soura
 --%>
@@ -10,7 +10,7 @@
 
 <head>
 
-  <title>Login</title>
+  <title>Branch Login</title>
 
   <jsp:include page="assets/jsp/head.jsp" />
 
@@ -42,29 +42,27 @@
                     <p class="text-center small">Enter your username & password to login</p>
                   </div>
 
-                  <form class="row g-3">
+                    <form method="POST" action="branchLogin.jsp" class="row g-3">
 
                     <div class="col-12">
-                      <label for="yourUsername" class="form-label">Username</label>
+                      <label for="username" class="form-label">Username</label>
                       <div class="input-group">
-                        <input type="text" name="username" class="form-control" id="yourUsername" required>
+                        <input type="text" name="username" class="form-control" id="username" required>
                         <div class="invalid-feedback">Please enter your username.</div>
                       </div>
                     </div>
 
                     <div class="col-12">
-                      <label for="yourPassword" class="form-label">Password</label>
-                      <input type="password" name="passwword" class="form-control" id="yourPassword" required>
+                      <label for="password" class="form-label">Password</label>
+                      <input type="password" name="passwword" class="form-control" id="password" required>
                       <div class="invalid-feedback">Please enter your password!</div>
                     </div>
 
                     
                     <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit">Login</button>
+                        <button class="btn btn-primary w-100" id="submit" name="submit" value="submit" type="submit">Login</button>
                     </div>
-                    <!-- <div class="col-12">
-                      <p class="small mb-0">Don't have account? <a href="pages-register.html">Create an account</a></p>
-                    </div> -->
+                    
                   </form>
 
                 </div>
@@ -77,6 +75,12 @@
 
     </div>
   </main>
+    
+    <script>
+        if ( window.history.replaceState ) {
+            window.history.replaceState( null, null, window.location.href );
+        }
+    </script>
     
   <jsp:include page="assets/jsp/footer.jsp" />
 

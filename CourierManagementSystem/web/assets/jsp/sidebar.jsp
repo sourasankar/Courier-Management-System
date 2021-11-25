@@ -10,7 +10,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="dashboard.jsp">
+        <a class="nav-link collapsed" href="branchDashboard.jsp">
           <i class="bi bi-graph-up-arrow"></i>
           <span>Dashboard</span>
         </a>
@@ -38,7 +38,7 @@
       </li>
       
       <li class="nav-item">
-        <a class="nav-link collapsed" href="bookConsignment.jsp">
+        <a class="nav-link collapsed" href="deliverConsignment.jsp">
           <i class="bi bi-boxes"></i>
           <span>Deliver Consignment</span>
         </a>
@@ -70,11 +70,18 @@
       </li><!-- End Register Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
+        <a class="nav-link collapsed" href="branchLogin.jsp">
           <i class="bi bi-box-arrow-in-right"></i>
-          <span>Login</span>
+          <span>Branch Login</span>
         </a>
       </li><!-- End Login Page Nav -->
+      
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="employeeLogin.jsp">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Employee Login</span>
+        </a>
+      </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="pages-error-404.html">

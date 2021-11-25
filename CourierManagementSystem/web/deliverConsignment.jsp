@@ -1,6 +1,6 @@
 <%-- 
-    Document   : transitConsignment
-    Created on : Nov 25, 2021, 10:45:38 AM
+    Document   : deliverConsignment
+    Created on : Nov 25, 2021, 5:57:31 PM
     Author     : soura
 --%>
 
@@ -10,7 +10,7 @@
 
 <head>
   
-  <title>Transit Consignment</title>
+  <title>Deliver Consignment</title>
 
   <jsp:include page="assets/jsp/head.jsp" />
   
@@ -29,7 +29,7 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Transit Consignment</h1>
+      <h1>Deliver Consignment</h1>
     </div><!-- End Page Title -->
 
       <div class="row">
@@ -39,14 +39,14 @@
           <div class="card">
             <div class="card-body" >
                 <%
-                    if(request.getParameter("transit")!=null && request.getMethod().equals("POST")){
+                    if(request.getParameter("deliver")!=null && request.getMethod().equals("POST")){
                 %>
                 
                   
 
                     <h5 class="card-title">Package Details</h5>
 
-                    <div class="row" style="display: flex;justify-content: space-evenly;">
+                    <div class="row" style="display: flex;justify-content: center;">
                         <fieldset style="all: revert; font-weight: 600;" class="col-6">
                             <legend style="all: revert;">Consignment Details:</legend>
                             Consignment ID: AEGD74595WB <br>
@@ -54,34 +54,36 @@
                             Weight: 15gm<br>
                             Amount: 125/-<br>
                             Book at: Hooghly H.O<br><br>
-                            <u>Ship To:</u><br>
+                            <u>Deliver To:</u><br>
                             Soura Sankar Mondal<br>
                             Bali Kali Tala,<br>P.O & Dist- Hooghly,<br>
                             Hooghly, West Bengal, 712103                       
                         </fieldset>
-                        <fieldset style="all: revert; font-weight: 600;" class="col-6">
-                            <legend style="all: revert;">Next Transit Location:</legend>                            
-                            <br><br><u>Transit To:</u><br>
-                            Kolkata H.O<br>
-                            Bali Kali Tala,<br>P.O & Dist- Hooghly,<br>
-                            Hooghly, West Bengal, 712103                       
-                        </fieldset>
                     </div>
-                    <div class="text-center" style="margin-top: 20px;">
-                        <form method="POST" action="transitConsignment.jsp">
-                            <button type="submit" class="btn btn-warning col-6 col-md-4 col-lg-3 col-xxl-2" id="transitConsignment" name="transitConsignment" value="fdsfd">Transit Consignment</button>
-                        </form>
-                    </div>
+                    <form method="POST" action="deliverConsignment.jsp">
+                        <div style="margin-top: 20px;display: flex;justify-content: center;">
+                            <div class="col-12 col-sm-8 col-md-6 col-lg-4 col-xxl-3">
+                                <label for="employee" class="form-label">Assign Employee: <span style="color: red;">*</span></label>
+                                <select id="employee" name="employee" class="form-select" required>
+                                  <option value="">Choose...</option>
+                                  <option>...</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="text-center" style="margin-top: 20px;">
+                            <button type="submit" class="btn btn-success col-6 col-md-4 col-lg-3 col-xxl-2" id="deliverConsignment" name="deliverConsignment" value="fdsfd">Deliver Consignment</button>
+                        </div>
+                    </form>
 
                   
                 <%
                     }
                     else{
-                        if(request.getParameter("transitConsignment")!=null && request.getMethod().equals("POST")){
+                        if(request.getParameter("deliverConsignment")!=null && request.getMethod().equals("POST")){
                 %>
                 <div class="alert alert-success alert-dismissible fade show col-md-8 col-xl-6 text-center mx-auto" style="margin-top: 20px;" role="alert">
                     <i class="bi bi-check-circle me-1"></i>
-                    Consignment has been shipped successfully
+                    Consignment ID: FDDS6565DS has been assigned to Soura Sankar for Delivery
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 <%
@@ -95,8 +97,8 @@
                         <tr>
                           <th scope="col">#</th>
                           <th scope="col">Consignment ID</th>
-                          <th scope="col">Next Transit Location</th>
-                          <th scope="col">Transit</th>
+                          <th scope="col">Deliver To</th>
+                          <th scope="col">Deliver</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -105,8 +107,8 @@
                           <td>Brandon Jacob</td>
                           <td>Designer</td>
                           <td>
-                              <form method="POST" action="transitConsignment.jsp">
-                                  <button type="submit" class="btn btn-warning btn-sm" name="transit" value="dsad465ad5">Transit</button>
+                              <form method="POST" action="deliverConsignment.jsp">
+                                  <button type="submit" class="btn btn-success btn-sm" name="deliver" value="dsad465ad5">Deliver</button>
                               </form>
                           </td>
                         </tr>
@@ -115,8 +117,8 @@
                           <td>Bridie Kessler</td>
                           <td>Developer</td>
                           <td>
-                              <form method="POST" action="transitConsignment.jsp">
-                                  <button type="submit" class="btn btn-warning btn-sm" name="transit" value="dsad465ad5">Transit</button>
+                              <form method="POST" action="deliverConsignment.jsp">
+                                  <button type="submit" class="btn btn-success btn-sm" name="deliver" value="dsad465ad5">Deliver</button>
                               </form>
                           </td>
                         </tr>
@@ -125,8 +127,8 @@
                           <td>Ashleigh Langosh</td>
                           <td>Finance</td>
                           <td>
-                              <form method="POST" action="transitConsignment.jsp">
-                                  <button type="submit" class="btn btn-warning btn-sm" name="transit" value="dsad465ad5">Transit</button>
+                              <form method="POST" action="deliverConsignment.jsp">
+                                  <button type="submit" class="btn btn-success btn-sm" name="deliver" value="dsad465ad5">Deliver</button>
                               </form>
                           </td>
                         </tr>
@@ -135,8 +137,8 @@
                           <td>Angus Grady</td>
                           <td>HR</td>
                           <td>
-                              <form method="POST" action="transitConsignment.jsp">
-                                  <button type="submit" class="btn btn-warning btn-sm" name="transit" value="dsad465ad5">Transit</button>
+                              <form method="POST" action="deliverConsignment.jsp">
+                                  <button type="submit" class="btn btn-success btn-sm" name="deliver" value="dsad465ad5">Deliver</button>
                               </form>
                           </td>
                         </tr>
@@ -145,8 +147,8 @@
                           <td>Raheem Lehner</td>
                           <td>Dynamic Division Officer</td>
                           <td>
-                              <form method="POST" action="transitConsignment.jsp">
-                                  <button type="submit" class="btn btn-warning btn-sm" name="transit" value="dsad465ad5">Transit</button>
+                              <form method="POST" action="deliverConsignment.jsp">
+                                  <button type="submit" class="btn btn-success btn-sm" name="deliver" value="dsad465ad5">Deliver</button>
                               </form>
                           </td>
                         </tr>
