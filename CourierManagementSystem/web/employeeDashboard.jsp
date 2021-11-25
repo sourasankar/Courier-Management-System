@@ -35,7 +35,7 @@
     <section class="section dashboard">
         <div class="row">
 
-            <div class="col-sm-6 col-md-4 col-lg-3 col-xxl-2">
+            <div class="col-sm-6 col-md-4 col-lg-3">
                 <div class="card info-card">
 
                     <div class="card-body">
