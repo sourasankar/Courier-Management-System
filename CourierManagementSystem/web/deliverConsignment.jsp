@@ -3,7 +3,11 @@
     Created on : Nov 25, 2021, 5:57:31 PM
     Author     : soura
 --%>
-
+<%
+    if(session.getAttribute("branchUsername")==null){
+        response.sendRedirect("branchLogin.jsp");
+    }  
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">

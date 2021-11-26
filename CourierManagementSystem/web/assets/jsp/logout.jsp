@@ -5,8 +5,8 @@
 --%>
 
 <%
-
+    
     session.invalidate();
-    response.sendRedirect("../../index.html");
+    response.sendRedirect("../../branchLogin.jsp");
 
 %>
