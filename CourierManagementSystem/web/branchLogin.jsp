@@ -6,7 +6,7 @@
 <%!
     String branchUsername,branchPassword,errorMsg;
 %>
-<%@page import="java.sql.*,java.util.*"%>
+
 <%
     if(request.getParameter("submit")!=null && request.getMethod().equals("POST")){
         
@@ -14,10 +14,9 @@
         branchUsername = request.getParameter("branchUsername");
         branchPassword = request.getParameter("branchPassword");
         //out.print("<script>alert('"+branchUsername+" "+branchPassword+"')</script>");
-          
-        Class.forName("com.mysql.jdbc.Driver");          
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "");  
-        
+%>
+        <%@include file="assets/jsp/dbConnection.jsp"%>
+<%
         String sql = "SELECT name,password FROM branch_details WHERE branch_id=?";
         PreparedStatement st=conn.prepareStatement(sql);
         st.setString(1,branchUsername);
