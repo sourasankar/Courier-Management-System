@@ -8,6 +8,62 @@
         response.sendRedirect("branchLogin.jsp");
     }  
 %>
+<%!
+    String employeeName,employeePhone,addEmployee,errorNameMsg,errorPhoneMsg;
+%>
+<%@page import="java.sql.*, java.util.regex.*"%>
+<%@include file="assets/jsp/dbConnection.jsp"%>
+<%
+    if(request.getParameter("addEmployee")!=null && request.getMethod().equals("POST")){
+    
+    //Data from FORM
+    employeeName = request.getParameter("employeeName");
+    employeePhone = request.getParameter("employeePhone");
+    int flag=1;
+    
+    if(Pattern.matches("^[A-Za-z]+(\\s[A-Za-z]+)*$", employeeName)==false){
+            flag = 0;
+            errorNameMsg = "is-invalid";
+    }
+    else{
+        errorNameMsg = "";
+    }
+    
+    if(Pattern.matches("^(\\d{10})$", employeePhone)==false){
+            flag = 0;
+            errorPhoneMsg = "is-invalid";
+    }
+    else{
+        errorPhoneMsg = "";
+    }
+    
+    if(flag==1){
+        addEmployee = "success";
+
+        String sql = "INSERT INTO employee_details (employee_id,branch_id,name,phone) VALUES (?,?,?,?);";
+        PreparedStatement st=conn.prepareStatement(sql);
+        st.setString(1,"emp"+String.valueOf(session.getAttribute("branchUsername"))+"jj");
+        st.setString(2,String.valueOf(session.getAttribute("branchUsername")));
+        st.setString(3,employeeName);
+        st.setString(4,employeePhone);
+        
+        st.executeUpdate();
+        
+        employeeName = employeePhone = "";
+        
+        conn.close();
+        
+    }
+    
+%>
+   
+<%
+    }
+    else{
+        employeeName=employeePhone=errorNameMsg=errorPhoneMsg=""; 
+        addEmployee=null;
+    }   
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -141,7 +197,7 @@
                 <div class="card-body">
                     
                     <%
-                    if(request.getParameter("addEmployee")!=null && request.getMethod().equals("POST")){
+                    if(addEmployee!=null){
                     %>
                     
                     <div class="alert alert-success alert-dismissible fade show col-md-10 text-center mx-auto" style="margin-top: 20px;" role="alert">
@@ -160,11 +216,17 @@
                       
                     <div class="col-md-6">
                       <label for="employeeName" class="form-label">Name</label>
-                      <input type="text" class="form-control" id="employeeName" name="employeeName" required>
+                      <input type="text" class="form-control <%= errorNameMsg%>" id="employeeName" name="employeeName" value="<%= employeeName%>" required>
+                      <span class="invalid-feedback">
+        		Enter valid Phone No
+                        </span>
                     </div>
                     <div class="col-md-6">
-                      <label for="employeePhone" class="form-label">Phone</label>
-                      <input type="phone" class="form-control" id="employeePhone" name="employeePhone" required>
+                      <label for="employeePhone" class="form-label">Phone No</label>
+                      <input type="phone" class="form-control <%= errorPhoneMsg%>" id="employeePhone" name="employeePhone" value="<%= employeePhone%>" required>
+                      <span class="invalid-feedback">
+        		Enter valid Phone No
+                        </span>
                     </div>
                  
                     <div class="text-center">

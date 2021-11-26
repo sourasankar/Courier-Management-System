@@ -6,14 +6,14 @@
 <%!
     String branchUsername,branchPassword,errorMsg;
 %>
-
+<%@page import="java.sql.*"%>
 <%
     if(request.getParameter("submit")!=null && request.getMethod().equals("POST")){
         
         //Data from FORM
         branchUsername = request.getParameter("branchUsername");
         branchPassword = request.getParameter("branchPassword");
-        //out.print("<script>alert('"+branchUsername+" "+branchPassword+"')</script>");
+        
 %>
         <%@include file="assets/jsp/dbConnection.jsp"%>
 <%

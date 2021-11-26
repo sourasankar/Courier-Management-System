@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Nov 25, 2021 at 07:16 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.12
+-- Host: 127.0.0.1
+-- Generation Time: Nov 26, 2021 at 04:52 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -46,59 +47,12 @@ CREATE TABLE `branch_details` (
 --
 
 INSERT INTO `branch_details` (`branch_id`, `name`, `username`, `password`, `type`, `address`, `state`, `district`, `pincode`, `phone`, `email`) VALUES
-('', '', '', '123456', '', '', 'Odisha', 'Angul', '', '', ''),
-('', '', '', '123456', '', '', 'Odisha', 'Balangir', '', '', ''),
-('', '', '', '123456', '', '', 'Odisha', 'Balasore', '', '', ''),
-('', '', '', '123456', '', '', 'Odisha', 'Bargarh', '', '', ''),
-('', '', '', '123456', '', '', 'Odisha', 'Bhadrak', '', '', ''),
-('', '', '', '123456', '', '', 'Odisha', 'Boudh', '', '', ''),
-('', '', '', '123456', '', '', 'Odisha', 'Cuttack', '', '', ''),
-('', '', '', '123456', '', '', 'Odisha', 'Debagarh', '', '', ''),
-('', '', '', '123456', '', '', 'Odisha', 'Dhenkanal', '', '', ''),
-('', '', '', '123456', '', '', 'Odisha', 'Gajapati', '', '', ''),
-('', '', '', '123456', '', '', 'Odisha', 'Ganjam', '', '', ''),
-('', '', '', '123456', '', '', 'Odisha', 'Jagatsinghpur', '', '', ''),
-('', '', '', '123456', '', '', 'Odisha', 'Jajpur', '', '', ''),
-('', '', '', '123456', '', '', 'Odisha', 'Jharsuguda', '', '', ''),
-('', '', '', '123456', '', '', 'Odisha', 'Kalahandi', '', '', ''),
-('', '', '', '123456', '', '', 'Odisha', 'Kandhamal', '', '', ''),
-('', '', '', '123456', '', '', 'Odisha', 'Kendrapara', '', '', ''),
-('', '', '', '123456', '', '', 'Odisha', 'Kendujhar', '', '', ''),
-('', '', '', '123456', '', '', 'Odisha', 'Khordha', '', '', ''),
-('', '', '', '123456', '', '', 'Odisha', 'Koraput', '', '', ''),
-('', '', '', '123456', '', '', 'Odisha', 'Malkangiri', '', '', ''),
-('', '', '', '123456', '', '', 'Odisha', 'Mayurbhanj', '', '', ''),
-('', '', '', '123456', '', '', 'Odisha', 'Nabarangpur', '', '', ''),
-('', '', '', '123456', '', '', 'Odisha', 'Nayagarh', '', '', ''),
-('', '', '', '123456', '', '', 'Odisha', 'Nuapada', '', '', ''),
-('', '', '', '123456', '', '', 'Odisha', 'Puri', '', '', ''),
-('', '', '', '123456', '', '', 'Odisha', 'Rayagada', '', '', ''),
-('', '', '', '123456', '', '', 'Odisha', 'Sambalpur', '', '', ''),
-('', '', '', '123456', '', '', 'Odisha', 'Subarnapur', '', '', ''),
-('', '', '', '123456', '', '', 'Odisha', 'Sundergarh', '', '', ''),
-('', '', '', '123456', '', '', 'West Bengal', 'Alipurduar', '', '', ''),
-('', '', '', '123456', '', '', 'West Bengal', 'Bankura', '', '', ''),
-('', '', '', '123456', '', '', 'West Bengal', 'Birbhum', '', '', ''),
-('', '', '', '123456', '', '', 'West Bengal', 'Cooch Behar', '', '', ''),
-('', '', '', '123456', '', '', 'West Bengal', 'Dakshin Dinajpur', '', '', ''),
-('', '', '', '123456', '', '', 'West Bengal', 'Darjeeling', '', '', ''),
-('', '', '', '123456', '', '', 'West Bengal', 'Hooghly', '', '', ''),
-('', '', '', '123456', '', '', 'West Bengal', 'Howrah', '', '', ''),
-('', '', '', '123456', '', '', 'West Bengal', 'Jalpaiguri', '', '', ''),
-('', '', '', '123456', '', '', 'West Bengal', 'Jhargram', '', '', ''),
-('', '', '', '123456', '', '', 'West Bengal', 'Kalimpong', '', '', ''),
-('', '', '', '123456', '', '', 'West Bengal', 'Kolkata', '', '', ''),
-('', '', '', '123456', '', '', 'West Bengal', 'Malda', '', '', ''),
-('', '', '', '123456', '', '', 'West Bengal', 'Murshidabad', '', '', ''),
-('', '', '', '123456', '', '', 'West Bengal', 'Nadia', '', '', ''),
-('', '', '', '123456', '', '', 'West Bengal', 'North 24 Parganas', '', '', ''),
-('', '', '', '123456', '', '', 'West Bengal', 'Paschim Bardhaman', '', '', ''),
-('', '', '', '123456', '', '', 'West Bengal', 'Paschim Medinipur', '', '', ''),
-('', '', '', '123456', '', '', 'West Bengal', 'Purba Bardhaman', '', '', ''),
-('', '', '', '123456', '', '', 'West Bengal', 'Purba Medinipur', '', '', ''),
-('', '', '', '123456', '', '', 'West Bengal', 'Purulia', '', '', ''),
-('', '', '', '123456', '', '', 'West Bengal', 'South 24 Parganas', '', '', ''),
-('', '', '', '123456', '', '', 'West Bengal', 'Uttar Dinajpur', '', '', '');
+('orkhordhain', 'Khordha SHO', 'khordha ', '123456789', 'sho', 'Unit 3, Kharabela Nagar, Bhubaneswar', 'odhisha', 'khordha', '751001', '9876543210', 'khordha.or@cms.com'),
+('orpuriin', 'Puri DHO', 'puri', '123456789', 'dho', 'Temple Rd, xyz', 'odisha', 'puri', '752001', '9876543210', 'puri.or@cms.com'),
+('orsundergarhin', 'Sundergarh DHO', 'sundergarh', '123456789', 'dho', '755,xyz,Sundergarh', 'odisha', 'sundergarh', '770001', '9876543210', 'sundergarh.or@cms.com'),
+('wbhooghlyin', 'Hooghly DHO', 'hooghly', '123456789', 'dho', 'Chinsurah', 'west bengal', 'hooghly', '712101', '9876543210', 'hooghly.wb@cms.com'),
+('wbkolkatain', 'Kolkata SHO', 'kolkata', '123456789', 'sho', 'Netaji Subhas Rd, Fairley Place, B.B.D. Bagh', 'west bengal', 'kolkata', '700001', '9876543210', 'kolkata.wb@cms.com'),
+('wbnadiain', 'Nadia DHO', 'nadia', '123456789', 'dho', 'B13, Central Prak, Kalyani', 'west bengal', 'nadia', '741235', '9876543210', 'nadia.wb@cms.com');
 
 -- --------------------------------------------------------
 
@@ -860,15 +814,41 @@ INSERT INTO `districts` (`id`, `state`, `district`) VALUES
 (741, 'West Bengal', 'South 24 Parganas'),
 (742, 'West Bengal', 'Uttar Dinajpur');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `employee_details`
+--
+
+CREATE TABLE `employee_details` (
+  `employee_id` varchar(50) NOT NULL,
+  `branch_id` varchar(50) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `phone` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `branch_details`
+--
+ALTER TABLE `branch_details`
+  ADD PRIMARY KEY (`branch_id`);
 
 --
 -- Indexes for table `districts`
 --
 ALTER TABLE `districts`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `employee_details`
+--
+ALTER TABLE `employee_details`
+  ADD PRIMARY KEY (`employee_id`),
+  ADD KEY `branch_id` (`branch_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -879,6 +859,16 @@ ALTER TABLE `districts`
 --
 ALTER TABLE `districts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=743;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `employee_details`
+--
+ALTER TABLE `employee_details`
+  ADD CONSTRAINT `employee_details_ibfk_1` FOREIGN KEY (`branch_id`) REFERENCES `branch_details` (`branch_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
