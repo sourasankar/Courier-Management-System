@@ -12,7 +12,7 @@
 
   <title>Employee Login</title>
 
-  <jsp:include page="assets/jsp/head.jsp" />
+  <%@include file="assets/jsp/head.jsp"%>
 
 </head>
 
@@ -76,7 +76,7 @@
     </div>
   </main>
     
-  <jsp:include page="assets/jsp/footer.jsp" />
+  <%@include file="assets/jsp/footer.jsp"%>
 
 </body>
 

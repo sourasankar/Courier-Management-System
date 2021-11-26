@@ -12,18 +12,18 @@
   
   <title>Deliver Consignment</title>
 
-  <jsp:include page="assets/jsp/head.jsp" />
+  <%@include file="assets/jsp/head.jsp"%>
   
 </head>
 
 <body>
 
   <!-- ======= Header ======= -->
-  <jsp:include page="assets/jsp/employeeNav.jsp" />
+  <%@include file="assets/jsp/employeeNav.jsp"%>
   <!-- End Header -->
 
   <!-- ======= Sidebar ======= -->
-  <jsp:include page="assets/jsp/employeeSidebar.jsp" />
+  <%@include file="assets/jsp/employeeSidebar.jsp"%>
   <!-- End Sidebar-->
 
   <main id="main" class="main">
@@ -160,7 +160,7 @@
     
   </main><!-- End #main -->
   
-  <jsp:include page="assets/jsp/footer.jsp" />
+  <%@include file="assets/jsp/footer.jsp"%>
 
 </body>
 

@@ -16,18 +16,18 @@
   
   <title>Transit Consignment</title>
 
-  <jsp:include page="assets/jsp/head.jsp" />
+  <%@include file="assets/jsp/head.jsp"%>
   
 </head>
 
 <body>
 
   <!-- ======= Header ======= -->
-  <jsp:include page="assets/jsp/nav.jsp" />
+  <%@include file="assets/jsp/nav.jsp"%>
   <!-- End Header -->
 
   <!-- ======= Sidebar ======= -->
-  <jsp:include page="assets/jsp/sidebar.jsp" />
+  <%@include file="assets/jsp/sidebar.jsp"%>
   <!-- End Sidebar-->
 
   <main id="main" class="main">
@@ -171,7 +171,7 @@
     
   </main><!-- End #main -->
   
-  <jsp:include page="assets/jsp/footer.jsp" />
+  <%@include file="assets/jsp/footer.jsp"%>
 
 </body>
 
