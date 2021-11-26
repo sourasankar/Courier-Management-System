@@ -223,7 +223,7 @@
                       <label for="fromState" class="form-label">State  <span style="color: red;">*</span></label>
                       <select id="fromState" onchange="district(this.value,'fromDistrict')" name="fromState" class="form-select" required>
                         <option value="">Choose...</option>
-                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+<!--                        <option value="Andhra Pradesh">Andhra Pradesh</option>
                         <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
                         <option value="Assam">Assam</option>
@@ -248,16 +248,16 @@
                         <option value="Manipur">Manipur</option>
                         <option value="Meghalaya">Meghalaya</option>
                         <option value="Mizoram">Mizoram</option>
-                        <option value="Nagaland">Nagaland</option>
+                        <option value="Nagaland">Nagaland</option>-->
                         <option value="Odisha">Odisha</option>
-                        <option value="Punjab">Punjab</option>
+<!--                        <option value="Punjab">Punjab</option>
                         <option value="Rajasthan">Rajasthan</option>
                         <option value="Sikkim">Sikkim</option>
                         <option value="Tamil Nadu">Tamil Nadu</option>
                         <option value="Telangana">Telangana</option>
                         <option value="Tripura">Tripura</option>
                         <option value="Uttar Pradesh">Uttar Pradesh</option>
-                        <option value="Uttarakhand">Uttarakhand</option>
+                        <option value="Uttarakhand">Uttarakhand</option>-->
                         <option value="West Bengal">West Bengal</option>
                       </select>
                     </div>
