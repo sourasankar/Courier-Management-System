@@ -39,19 +39,23 @@
     
     if(flag==1){
         addEmployee = "success";
-
-        String sql = "INSERT INTO employee_details (employee_id,branch_id,name,phone) VALUES (?,?,?,?);";
+        
+        String sql = "SELECT * FROM employee_details WHERE branch_id=?";
         PreparedStatement st=conn.prepareStatement(sql);
-        st.setString(1,"emp"+String.valueOf(session.getAttribute("branchUsername"))+"jj");
-        st.setString(2,String.valueOf(session.getAttribute("branchUsername")));
-        st.setString(3,employeeName);
-        st.setString(4,employeePhone);
+        st.setString(1,String.valueOf(session.getAttribute("branchUsername")));
+
+        ResultSet rs=st.executeQuery();
+
+        sql = "INSERT INTO employee_details (branch_id,name,phone) VALUES (?,?,?);";
+        st=conn.prepareStatement(sql);
+        st.setString(1,String.valueOf(session.getAttribute("branchUsername")));
+        st.setString(2,employeeName);
+        st.setString(3,employeePhone);
         
         st.executeUpdate();
         
         employeeName = employeePhone = "";
-        
-        conn.close();
+          
         
     }
     
@@ -111,81 +115,36 @@
                        </tr>
                      </thead>
                      <tbody>
+                         <%
+                            String sql = "SELECT * FROM employee_details WHERE branch_id=?";
+                            PreparedStatement st=conn.prepareStatement(sql);
+                            st.setString(1,String.valueOf(session.getAttribute("branchUsername")));
+
+                            ResultSet rs=st.executeQuery();
+                            int i=1;
+                            while(rs.next()){
+                                
+                            
+                         %>
                        <tr class="align-middle">
-                         <th scope="row">1</th>
-                         <td>SD5245SD</td>
-                         <td>Brandon Jacob</td>
+                         <th scope="row"><%= i %></th>
+                         <td><%= "EMP"+session.getAttribute("branchUsername").toString().toUpperCase()+rs.getString("employee_id") %></td>
+                         <td><%= rs.getString("name").toUpperCase() %></td>
                          <td>
                              <div style="display: flex;justify-content: space-evenly;">
                                 <form method="POST" action="manageEmployee.jsp">
-                                    <button type="submit" class="btn btn-primary" name="edit" value="empID"><i class="bi bi-pencil-square"></i></button>
+                                    <button type="submit" class="btn btn-primary" name="edit" value="<%= rs.getString("employee_id") %>"><i class="bi bi-pencil-square"></i></button>
                                 </form>
                                 <form method="POST" action="manageEmployee.jsp">
-                                    <button type="submit" class="btn btn-danger" name="delete" value="empID"><i class="bi bi-trash"></i></button>
+                                    <button type="submit" class="btn btn-danger" name="delete" value="<%= rs.getString("employee_id") %>"><i class="bi bi-trash"></i></button>
                                 </form> 
                             </div>
                          </td>
                        </tr>
-                       <tr class="align-middle">
-                         <th scope="row">2</th>
-                         <td>SD5245SD</td>
-                         <td>Bridie Kessler</td>
-                         <td>
-                             <div style="display: flex;justify-content: space-evenly;">
-                                <form method="POST" action="manageEmployee.jsp">
-                                    <button type="submit" class="btn btn-primary" name="edit" value="empID"><i class="bi bi-pencil-square"></i></button>
-                                </form>
-                                <form method="POST" action="manageEmployee.jsp">
-                                    <button type="submit" class="btn btn-danger" name="delete" value="empID"><i class="bi bi-trash"></i></button>
-                                </form> 
-                            </div>
-                         </td>
-                       </tr>
-                       <tr class="align-middle">
-                         <th scope="row">3</th>
-                         <td>SD5245SD</td>
-                         <td>Ashleigh Langosh</td>
-                         <td>
-                             <div style="display: flex;justify-content: space-evenly;">
-                                <form method="POST" action="manageEmployee.jsp">
-                                    <button type="submit" class="btn btn-primary" name="edit" value="empID"><i class="bi bi-pencil-square"></i></button>
-                                </form>
-                                <form method="POST" action="manageEmployee.jsp">
-                                    <button type="submit" class="btn btn-danger" name="delete" value="empID"><i class="bi bi-trash"></i></button>
-                                </form> 
-                            </div>
-                         </td>
-                       </tr>
-                       <tr class="align-middle">
-                         <th scope="row">4</th>
-                         <td>SD5245SD</td>
-                         <td>Angus Grady</td>
-                         <td>
-                             <div style="display: flex;justify-content: space-evenly;">
-                                <form method="POST" action="manageEmployee.jsp">
-                                    <button type="submit" class="btn btn-primary" name="edit" value="empID"><i class="bi bi-pencil-square"></i></button>
-                                </form>
-                                <form method="POST" action="manageEmployee.jsp">
-                                    <button type="submit" class="btn btn-danger" name="delete" value="empID"><i class="bi bi-trash"></i></button>
-                                </form> 
-                            </div>
-                         </td>
-                       </tr>
-                       <tr class="align-middle">
-                         <th scope="row">5</th>
-                         <td>SD5245SD</td>
-                         <td>Raheem Lehner</td>
-                         <td>
-                             <div style="display: flex;justify-content: space-evenly;">
-                                <form method="POST" action="manageEmployee.jsp">
-                                    <button type="submit" class="btn btn-primary" name="edit" value="empID"><i class="bi bi-pencil-square"></i></button>
-                                </form>
-                                <form method="POST" action="manageEmployee.jsp">
-                                    <button type="submit" class="btn btn-danger" name="delete" value="empID"><i class="bi bi-trash"></i></button>
-                                </form> 
-                            </div>
-                         </td>
-                       </tr>
+                       <%
+                           i++;
+                           }
+                       %>
                      </tbody>
                    </table>
                    <!-- End Default Table Example -->
@@ -210,7 +169,7 @@
                     }
                     %>
                     
-                  <h5 class="card-title">Default Table</h5>
+                  <h5 class="card-title">Add Employee</h5>
 
                   <form class="row g-3" method="POST" action="manageEmployee.jsp">
                       
@@ -245,6 +204,9 @@
 
 
   <%@include file="assets/jsp/footer.jsp"%>
+  <%
+      conn.close();
+  %>
 
 </body>
 
