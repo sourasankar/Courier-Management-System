@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2021 at 04:52 PM
+-- Generation Time: Nov 30, 2021 at 10:33 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.1
 
@@ -821,11 +821,20 @@ INSERT INTO `districts` (`id`, `state`, `district`) VALUES
 --
 
 CREATE TABLE `employee_details` (
-  `employee_id` varchar(50) NOT NULL,
+  `employee_id` int(50) NOT NULL,
   `branch_id` varchar(50) NOT NULL,
   `name` varchar(100) NOT NULL,
   `phone` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `employee_details`
+--
+
+INSERT INTO `employee_details` (`employee_id`, `branch_id`, `name`, `phone`) VALUES
+(1000, 'wbhooghlyin', 'Soura Sankar', '9876543210'),
+(1001, 'wbhooghlyin', 'Soura Sankar Mondal', '1234569870'),
+(1002, 'orpuriin', 'Soura Sankar mondal', '9876543210');
 
 --
 -- Indexes for dumped tables
@@ -859,6 +868,12 @@ ALTER TABLE `employee_details`
 --
 ALTER TABLE `districts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=743;
+
+--
+-- AUTO_INCREMENT for table `employee_details`
+--
+ALTER TABLE `employee_details`
+  MODIFY `employee_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1005;
 
 --
 -- Constraints for dumped tables
