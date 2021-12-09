@@ -3,13 +3,14 @@
     Created on : Nov 25, 2021, 8:27:26 PM
     Author     : soura
 --%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%
     if(session.getAttribute("branchUsername")==null){
         response.sendRedirect("branchLogin.jsp");
     }  
 %>
 <%!
-    String employeeName,employeePhone,addEmployee,errorNameMsg,errorPhoneMsg;
+    String employeeName,employeePhone,employeeDob,addEmployee,errorNameMsg,errorPhoneMsg;
 %>
 <%@page import="java.sql.*, java.util.regex.*"%>
 <%@include file="assets/jsp/dbConnection.jsp"%>
@@ -19,6 +20,7 @@
     //Data from FORM
     employeeName = request.getParameter("employeeName");
     employeePhone = request.getParameter("employeePhone");
+    employeeDob = request.getParameter("employeeDob");
     int flag=1;
     
     if(Pattern.matches("^[A-Za-z]+(\\s[A-Za-z]+)*$", employeeName)==false){
@@ -40,17 +42,19 @@
     if(flag==1){
         addEmployee = "success";
         
-        String sql = "SELECT * FROM employee_details WHERE branch_id=?";
+        String sql = "SELECT employee_id FROM ( SELECT CONCAT('EMP',FLOOR(RAND() * 999999)) AS employee_id UNION SELECT CONCAT('EMP',FLOOR(RAND() * 999999)) AS employee_id ) AS employee_details WHERE employee_id NOT IN (SELECT employee_id FROM employee_details) LIMIT 1";
         PreparedStatement st=conn.prepareStatement(sql);
-        st.setString(1,String.valueOf(session.getAttribute("branchUsername")));
 
         ResultSet rs=st.executeQuery();
+        rs.next();
 
-        sql = "INSERT INTO employee_details (branch_id,name,phone) VALUES (?,?,?);";
+        sql = "INSERT INTO employee_details (employee_id,branch_id,name,phone,dob) VALUES (?,?,?,?,?);";
         st=conn.prepareStatement(sql);
-        st.setString(1,String.valueOf(session.getAttribute("branchUsername")));
-        st.setString(2,employeeName);
-        st.setString(3,employeePhone);
+        st.setString(1,rs.getString("employee_id"));
+        st.setString(2,String.valueOf(session.getAttribute("branchUsername")));
+        st.setString(3,employeeName);
+        st.setString(4,employeePhone);
+        st.setString(5,employeeDob);
         
         st.executeUpdate();
         
@@ -111,6 +115,7 @@
                          <th scope="col">#</th>
                          <th scope="col">Employee ID</th>
                          <th scope="col">Name</th>
+                         <th scope="col">DOB</th>
                          <th scope="col">Action</th>
                        </tr>
                      </thead>
@@ -122,14 +127,15 @@
 
                             ResultSet rs=st.executeQuery();
                             int i=1;
-                            while(rs.next()){
-                                
-                            
+                            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                            SimpleDateFormat formatter2 = new SimpleDateFormat("yyyy-MM-dd");
+                            while(rs.next()){    
                          %>
                        <tr class="align-middle">
                          <th scope="row"><%= i %></th>
-                         <td><%= "EMP"+session.getAttribute("branchUsername").toString().toUpperCase()+rs.getString("employee_id") %></td>
+                         <td><%= rs.getString("employee_id") %></td>
                          <td><%= rs.getString("name").toUpperCase() %></td>
+                         <td><%= formatter.format(formatter2.parse(rs.getString("dob"))) %></td>
                          <td>
                              <div style="display: flex;justify-content: space-evenly;">
                                 <form method="POST" action="manageEmployee.jsp">
@@ -186,6 +192,10 @@
                       <span class="invalid-feedback">
         		Enter valid Phone No
                         </span>
+                    </div>
+                      <div class="col-md-6 offset-md-3">
+                      <label for="employeeDob" class="form-label">DOB</label>
+                      <input type="date" class="form-control" id="employeeDob" name="employeeDob" required>
                     </div>
                  
                     <div class="text-center">
