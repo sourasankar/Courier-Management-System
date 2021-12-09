@@ -193,7 +193,7 @@
         		Enter valid Phone No
                         </span>
                     </div>
-                      <div class="col-md-6 offset-md-3">
+                    <div class="col-md-6 offset-md-3">
                       <label for="employeeDob" class="form-label">DOB</label>
                       <input type="date" class="form-control" id="employeeDob" name="employeeDob" required>
                     </div>
