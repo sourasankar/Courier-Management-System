@@ -133,7 +133,7 @@
                     </div>
                     <div class="col-md-6">
                       <label for="toPhone" class="form-label">Phone No</label>
-                      <input type="phone" class="form-control" id="toPhone" name="toPhone">
+                      <input type="tel" class="form-control" id="toPhone" name="toPhone" pattern="^\d{10}$">
                     </div>
                     <div class="col-lg-6">
                       <label for="toAddress1" class="form-label">Address <span style="color: red;">*</span></label>
@@ -194,7 +194,7 @@
                     </div>             
                     <div class="col-md-4">
                       <label for="toPincode" class="form-label">Zip  <span style="color: red;">*</span></label>
-                      <input type="number" class="form-control" id="toPincode" name="toPincode" pattern="^(\d{6})" required>
+                      <input type="text" class="form-control" id="toPincode" name="toPincode" pattern="^\d{6}$" required>
                     </div>
                     
                 </div>
@@ -209,7 +209,7 @@
                     </div>
                     <div class="col-md-6">
                       <label for="fromPhone" class="form-label">Phone No</label>
-                      <input type="phone" class="form-control" id="fromPhone" name="fromPhone">
+                      <input type="tel" class="form-control" id="fromPhone" name="fromPhone" pattern="^\d{10}$">
                     </div>
                     <div class="col-lg-6">
                       <label for="fromAddress1" class="form-label">Address  <span style="color: red;">*</span></label>
@@ -270,7 +270,7 @@
                     </div>             
                     <div class="col-md-4">
                       <label for="fromPincode" class="form-label">Zip  <span style="color: red;">*</span></label>
-                      <input type="number" class="form-control" id="fromPincode" name="fromPincode" pattern="^(\d{6})" required>
+                      <input type="text" class="form-control" id="fromPincode" name="fromPincode" pattern="^\d{6}$" required>
                     </div>
                     
                 </div>
