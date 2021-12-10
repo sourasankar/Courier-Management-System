@@ -112,10 +112,10 @@
                             ResultSet rs=st.executeQuery();
                             rs.next();
 
-//                            sql = "DELETE FROM consignment_inventory WHERE consignment_id=?";
-//                            st=conn.prepareStatement(sql);
-//                            st.setString(1,request.getParameter("deliverConsignment"));
-//                            st.executeUpdate();
+                            sql = "DELETE FROM consignment_inventory WHERE consignment_id=?";
+                            st=conn.prepareStatement(sql);
+                            st.setString(1,request.getParameter("deliverConsignment"));
+                            st.executeUpdate();
                             
                             java.util.Date date = new java.util.Date();
                             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
