@@ -8,6 +8,77 @@
         response.sendRedirect("branchLogin.jsp");
     }  
 %>
+<%@page import="java.sql.*, java.util.regex.*"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@include file="assets/jsp/dbConnection.jsp"%>
+<%
+    if(request.getParameter("submit")!=null && request.getMethod().equals("POST")){
+    
+    //Data from FORM
+    String length = request.getParameter("length");
+    String width = request.getParameter("width");
+    String height = request.getParameter("height");
+    String weight = request.getParameter("weight");
+    String amount = request.getParameter("amount");
+    String toName = request.getParameter("toName");
+    String toPhone = request.getParameter("toPhone");
+    String toAddress1 = request.getParameter("toAddress1");
+    String toAddress2 = request.getParameter("toAddress2");
+    String toState = request.getParameter("toState");
+    String toDistrict = request.getParameter("toDistrict");
+    String toPincode = request.getParameter("toPincode");
+    String fromName = request.getParameter("fromName");
+    String fromPhone = request.getParameter("fromPhone");
+    String fromAddress1 = request.getParameter("fromAddress1");
+    String fromAddress2 = request.getParameter("fromAddress2");
+    String fromState = request.getParameter("fromState");
+    String fromDistrict = request.getParameter("fromDistrict");
+    String fromPincode = request.getParameter("fromPincode");
+    
+    java.util.Date date = new java.util.Date();  
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm:ss");
+    
+        
+    String sql = "SELECT consignment_id FROM ( SELECT CONCAT('PKG',FLOOR(RAND() * 99999999)) AS consignment_id UNION SELECT CONCAT('PKG',FLOOR(RAND() * 99999999)) AS consignment_id ) AS consignment_details WHERE consignment_id NOT IN (SELECT consignment_id FROM consignment_details) LIMIT 1";
+    PreparedStatement st=conn.prepareStatement(sql);
+
+    ResultSet rs=st.executeQuery();
+    rs.next();
+    String consignmentId = rs.getString("consignment_id");
+
+    sql = "INSERT INTO consignment_details(consignment_id,book_on,booked_at,branch_id,length,width,height,weight,amount,to_name,to_phone,to_address1,to_address2,to_state,to_district,to_pincode,from_name,from_phone,from_address1,from_address2,from_state,from_district,from_pincode) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    st=conn.prepareStatement(sql);
+    st.setString(1,consignmentId);
+    st.setString(2,dateFormat.format(date));
+    st.setString(3,timeFormat.format(date));
+    st.setString(4,String.valueOf(session.getAttribute("branchUsername")));
+    st.setString(5,length);
+    st.setString(6,width);
+    st.setString(7,height);
+    st.setString(8,weight);
+    st.setString(9,amount);
+    st.setString(10,toName);
+    st.setString(11,toPhone);
+    st.setString(12,toAddress1);
+    st.setString(13,toAddress2);
+    st.setString(14,toState);
+    st.setString(15,toDistrict);
+    st.setString(16,toPincode);
+    st.setString(17,fromName);
+    st.setString(18,fromPhone);
+    st.setString(19,fromAddress1);
+    st.setString(20,fromAddress2);
+    st.setString(21,fromState);
+    st.setString(22,fromDistrict);
+    st.setString(23,fromPincode);
+    
+        
+    st.executeUpdate();   
+    
+    conn.close();
+    
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -292,7 +363,7 @@
 
         </div>        
     
-        </div>
+      </div>
   </main>     <!-- End #main -->
   
     <script>
