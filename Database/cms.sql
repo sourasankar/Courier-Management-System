@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2021 at 07:53 AM
+-- Generation Time: Dec 10, 2021 at 04:18 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.1
 
@@ -53,6 +53,18 @@ INSERT INTO `branch_details` (`branch_id`, `name`, `username`, `password`, `type
 ('wbhooghlyin', 'Hooghly DHO', 'hooghly', '123456789', 'dho', 'Chinsurah', 'west bengal', 'hooghly', '712101', '9876543210', 'hooghly.wb@cms.com'),
 ('wbkolkatain', 'Kolkata SHO', 'kolkata', '123456789', 'sho', 'Netaji Subhas Rd, Fairley Place, B.B.D. Bagh', 'west bengal', 'kolkata', '700001', '9876543210', 'kolkata.wb@cms.com'),
 ('wbnadiain', 'Nadia DHO', 'nadia', '123456789', 'dho', 'B13, Central Prak, Kalyani', 'west bengal', 'nadia', '741235', '9876543210', 'nadia.wb@cms.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `consignment_delivery`
+--
+
+CREATE TABLE `consignment_delivery` (
+  `id` int(11) NOT NULL,
+  `consignment_id` varchar(50) NOT NULL,
+  `employee_id` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -937,6 +949,14 @@ ALTER TABLE `branch_details`
   ADD PRIMARY KEY (`branch_id`);
 
 --
+-- Indexes for table `consignment_delivery`
+--
+ALTER TABLE `consignment_delivery`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `consignment_id` (`consignment_id`),
+  ADD KEY `employee_id` (`employee_id`);
+
+--
 -- Indexes for table `consignment_details`
 --
 ALTER TABLE `consignment_details`
@@ -976,6 +996,12 @@ ALTER TABLE `employee_details`
 --
 
 --
+-- AUTO_INCREMENT for table `consignment_delivery`
+--
+ALTER TABLE `consignment_delivery`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `consignment_inventory`
 --
 ALTER TABLE `consignment_inventory`
@@ -985,7 +1011,7 @@ ALTER TABLE `consignment_inventory`
 -- AUTO_INCREMENT for table `consignment_tracker`
 --
 ALTER TABLE `consignment_tracker`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `districts`
@@ -996,6 +1022,13 @@ ALTER TABLE `districts`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `consignment_delivery`
+--
+ALTER TABLE `consignment_delivery`
+  ADD CONSTRAINT `consignment_delivery_ibfk_1` FOREIGN KEY (`consignment_id`) REFERENCES `consignment_details` (`consignment_id`),
+  ADD CONSTRAINT `consignment_delivery_ibfk_2` FOREIGN KEY (`employee_id`) REFERENCES `employee_details` (`employee_id`);
 
 --
 -- Constraints for table `consignment_details`
