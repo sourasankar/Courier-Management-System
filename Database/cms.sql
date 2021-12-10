@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2021 at 10:33 AM
+-- Generation Time: Dec 10, 2021 at 07:53 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.1
 
@@ -53,6 +53,96 @@ INSERT INTO `branch_details` (`branch_id`, `name`, `username`, `password`, `type
 ('wbhooghlyin', 'Hooghly DHO', 'hooghly', '123456789', 'dho', 'Chinsurah', 'west bengal', 'hooghly', '712101', '9876543210', 'hooghly.wb@cms.com'),
 ('wbkolkatain', 'Kolkata SHO', 'kolkata', '123456789', 'sho', 'Netaji Subhas Rd, Fairley Place, B.B.D. Bagh', 'west bengal', 'kolkata', '700001', '9876543210', 'kolkata.wb@cms.com'),
 ('wbnadiain', 'Nadia DHO', 'nadia', '123456789', 'dho', 'B13, Central Prak, Kalyani', 'west bengal', 'nadia', '741235', '9876543210', 'nadia.wb@cms.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `consignment_details`
+--
+
+CREATE TABLE `consignment_details` (
+  `consignment_id` varchar(50) NOT NULL,
+  `book_on` date NOT NULL,
+  `booked_at` time NOT NULL,
+  `branch_id` varchar(50) NOT NULL,
+  `length` varchar(50) NOT NULL,
+  `width` varchar(50) NOT NULL,
+  `height` varchar(50) NOT NULL,
+  `weight` varchar(50) NOT NULL,
+  `amount` varchar(50) NOT NULL,
+  `to_name` varchar(100) NOT NULL,
+  `to_phone` varchar(50) NOT NULL,
+  `to_address1` varchar(100) NOT NULL,
+  `to_address2` varchar(100) NOT NULL,
+  `to_state` varchar(50) NOT NULL,
+  `to_district` varchar(50) NOT NULL,
+  `to_pincode` varchar(50) NOT NULL,
+  `from_name` varchar(100) NOT NULL,
+  `from_phone` varchar(50) NOT NULL,
+  `from_address1` varchar(100) NOT NULL,
+  `from_address2` varchar(100) NOT NULL,
+  `from_state` varchar(50) NOT NULL,
+  `from_district` varchar(50) NOT NULL,
+  `from_pincode` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `consignment_details`
+--
+
+INSERT INTO `consignment_details` (`consignment_id`, `book_on`, `booked_at`, `branch_id`, `length`, `width`, `height`, `weight`, `amount`, `to_name`, `to_phone`, `to_address1`, `to_address2`, `to_state`, `to_district`, `to_pincode`, `from_name`, `from_phone`, `from_address1`, `from_address2`, `from_state`, `from_district`, `from_pincode`) VALUES
+('PKG12866603IN', '2021-12-10', '12:09:46', 'wbhooghlyin', '10', '12', '7', '200', '240', 'Soura Sankar Mondal', '9876543210', 'Bali Kali Tala', 'P.O & Dist- Hooghly', 'West Bengal', 'Hooghly', '712103', 'Uday Sankar Mondal', '9876543210', 'xyz xyz', '', 'West Bengal', 'Hooghly', '789465'),
+('PKG29487079IN', '2021-12-10', '12:15:07', 'wbhooghlyin', '12', '12', '12', '123', '564', 'dsads sDg', '9876543210', 'hgdff dfh ', 'gdsztg', 'Odisha', 'Puri', '987654', 'xgh dfhgdfg', '9876543210', 'vsdg asg', '', 'Odisha', 'Khordha', '987635'),
+('PKG79830938IN', '2021-12-10', '12:04:49', 'wbhooghlyin', '12', '12', '7', '120', '1550', 'soura sankar mondal', '9876543210', 'bali kali tala', 'p.o & dist- hooghly', 'West Bengal', 'Hooghly', '712103', 'uday sankar mondal', '9876543210', 'xyz xyz', '', 'West Bengal', 'Hooghly', '712101'),
+('PKG87942798IN', '2021-12-10', '12:11:11', 'wbhooghlyin', '14', '14', '1', '21', '150', 'kdsakndsan dsnaklnd', '9876543210', 'dsadsadsa d safgds', 'dsasd ', 'Odisha', 'Puri', '789456', ' afh sdfgjh dsfg', '9876543210', 'dsfh sdh dfg', '', 'West Bengal', 'Hooghly', '789456');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `consignment_inventory`
+--
+
+CREATE TABLE `consignment_inventory` (
+  `id` int(11) NOT NULL,
+  `consignment_id` varchar(50) NOT NULL,
+  `branch_id` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `consignment_inventory`
+--
+
+INSERT INTO `consignment_inventory` (`id`, `consignment_id`, `branch_id`) VALUES
+(1, 'PKG79830938IN', 'wbhooghlyin'),
+(2, 'PKG12866603IN', 'wbhooghlyin'),
+(3, 'PKG87942798IN', 'wbhooghlyin'),
+(4, 'PKG29487079IN', 'wbhooghlyin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `consignment_tracker`
+--
+
+CREATE TABLE `consignment_tracker` (
+  `id` int(11) NOT NULL,
+  `consignment_id` varchar(50) NOT NULL,
+  `date` date NOT NULL,
+  `time` time NOT NULL,
+  `toLocation` varchar(50) DEFAULT NULL,
+  `status` varchar(50) NOT NULL,
+  `remarks` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `consignment_tracker`
+--
+
+INSERT INTO `consignment_tracker` (`id`, `consignment_id`, `date`, `time`, `toLocation`, `status`, `remarks`) VALUES
+(1, 'PKG79830938IN', '2021-12-10', '12:04:49', NULL, 'Booked', 'at Hooghly DHO'),
+(2, 'PKG12866603IN', '2021-12-10', '12:09:46', NULL, 'Booked', 'at Hooghly DHO'),
+(3, 'PKG87942798IN', '2021-12-10', '12:11:11', NULL, 'Booked', 'at Hooghly DHO'),
+(4, 'PKG29487079IN', '2021-12-10', '12:15:07', NULL, 'Booked', 'at Hooghly DHO');
 
 -- --------------------------------------------------------
 
@@ -821,20 +911,20 @@ INSERT INTO `districts` (`id`, `state`, `district`) VALUES
 --
 
 CREATE TABLE `employee_details` (
-  `employee_id` int(50) NOT NULL,
+  `employee_id` varchar(50) NOT NULL,
   `branch_id` varchar(50) NOT NULL,
   `name` varchar(100) NOT NULL,
-  `phone` varchar(15) NOT NULL
+  `phone` varchar(15) NOT NULL,
+  `dob` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `employee_details`
 --
 
-INSERT INTO `employee_details` (`employee_id`, `branch_id`, `name`, `phone`) VALUES
-(1000, 'wbhooghlyin', 'Soura Sankar', '9876543210'),
-(1001, 'wbhooghlyin', 'Soura Sankar Mondal', '1234569870'),
-(1002, 'orpuriin', 'Soura Sankar mondal', '9876543210');
+INSERT INTO `employee_details` (`employee_id`, `branch_id`, `name`, `phone`, `dob`) VALUES
+('EMP115828', 'WBHOOGHLYIN', 'Soura Sankar Mondal', '9876543210', '2000-06-08'),
+('EMP732110', 'WBHOOGHLYIN', 'uday sankar mondal', '4108756045', '2021-12-14');
 
 --
 -- Indexes for dumped tables
@@ -845,6 +935,28 @@ INSERT INTO `employee_details` (`employee_id`, `branch_id`, `name`, `phone`) VAL
 --
 ALTER TABLE `branch_details`
   ADD PRIMARY KEY (`branch_id`);
+
+--
+-- Indexes for table `consignment_details`
+--
+ALTER TABLE `consignment_details`
+  ADD PRIMARY KEY (`consignment_id`),
+  ADD KEY `branch_id` (`branch_id`);
+
+--
+-- Indexes for table `consignment_inventory`
+--
+ALTER TABLE `consignment_inventory`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `consignment_id` (`consignment_id`),
+  ADD KEY `branch_id` (`branch_id`);
+
+--
+-- Indexes for table `consignment_tracker`
+--
+ALTER TABLE `consignment_tracker`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `consignment_id` (`consignment_id`);
 
 --
 -- Indexes for table `districts`
@@ -864,20 +976,45 @@ ALTER TABLE `employee_details`
 --
 
 --
+-- AUTO_INCREMENT for table `consignment_inventory`
+--
+ALTER TABLE `consignment_inventory`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `consignment_tracker`
+--
+ALTER TABLE `consignment_tracker`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `districts`
 --
 ALTER TABLE `districts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=743;
 
 --
--- AUTO_INCREMENT for table `employee_details`
---
-ALTER TABLE `employee_details`
-  MODIFY `employee_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1005;
-
---
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `consignment_details`
+--
+ALTER TABLE `consignment_details`
+  ADD CONSTRAINT `consignment_details_ibfk_1` FOREIGN KEY (`branch_id`) REFERENCES `branch_details` (`branch_id`);
+
+--
+-- Constraints for table `consignment_inventory`
+--
+ALTER TABLE `consignment_inventory`
+  ADD CONSTRAINT `consignment_inventory_ibfk_1` FOREIGN KEY (`consignment_id`) REFERENCES `consignment_details` (`consignment_id`),
+  ADD CONSTRAINT `consignment_inventory_ibfk_2` FOREIGN KEY (`branch_id`) REFERENCES `branch_details` (`branch_id`);
+
+--
+-- Constraints for table `consignment_tracker`
+--
+ALTER TABLE `consignment_tracker`
+  ADD CONSTRAINT `consignment_tracker_ibfk_1` FOREIGN KEY (`consignment_id`) REFERENCES `consignment_details` (`consignment_id`);
 
 --
 -- Constraints for table `employee_details`
