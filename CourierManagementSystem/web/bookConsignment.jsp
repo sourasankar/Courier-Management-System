@@ -36,7 +36,7 @@
     fromAddress2 = request.getParameter("fromAddress2");
     fromState = request.getParameter("fromState");
     fromDistrict = request.getParameter("fromDistrict");
-     fromPincode = request.getParameter("fromPincode");
+    fromPincode = request.getParameter("fromPincode");
     
     java.util.Date date = new java.util.Date();  
     SimpleDateFormat today = new SimpleDateFormat("dd-MMM-yyyy");
@@ -49,7 +49,6 @@
         
     String sql = "SELECT consignment_id FROM ( SELECT CONCAT('PKG',FLOOR(RAND() * 99999999),'IN') AS consignment_id UNION SELECT CONCAT('PKG',FLOOR(RAND() * 99999999),'IN') AS consignment_id ) AS consignment_details WHERE consignment_id NOT IN (SELECT consignment_id FROM consignment_details) LIMIT 1";
     PreparedStatement st=conn.prepareStatement(sql);
-
     ResultSet rs=st.executeQuery();
     rs.next();
     consignmentId = rs.getString("consignment_id");
