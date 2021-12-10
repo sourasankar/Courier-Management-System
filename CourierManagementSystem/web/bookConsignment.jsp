@@ -11,47 +11,54 @@
 <%@page import="java.sql.*, java.util.regex.*"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@include file="assets/jsp/dbConnection.jsp"%>
+<%!
+    String success,branchName,nowTime,nowDate,consignmentId,length,width,height,weight,amount,toName,toPhone,toAddress1,toAddress2,toState,toDistrict,toPincode,fromName,fromPhone,fromAddress1,fromAddress2,fromState,fromDistrict,fromPincode;
+%>
 <%
     if(request.getParameter("submit")!=null && request.getMethod().equals("POST")){
     
     //Data from FORM
-    String length = request.getParameter("length");
-    String width = request.getParameter("width");
-    String height = request.getParameter("height");
-    String weight = request.getParameter("weight");
-    String amount = request.getParameter("amount");
-    String toName = request.getParameter("toName");
-    String toPhone = request.getParameter("toPhone");
-    String toAddress1 = request.getParameter("toAddress1");
-    String toAddress2 = request.getParameter("toAddress2");
-    String toState = request.getParameter("toState");
-    String toDistrict = request.getParameter("toDistrict");
-    String toPincode = request.getParameter("toPincode");
-    String fromName = request.getParameter("fromName");
-    String fromPhone = request.getParameter("fromPhone");
-    String fromAddress1 = request.getParameter("fromAddress1");
-    String fromAddress2 = request.getParameter("fromAddress2");
-    String fromState = request.getParameter("fromState");
-    String fromDistrict = request.getParameter("fromDistrict");
-    String fromPincode = request.getParameter("fromPincode");
+    length = request.getParameter("length");
+    width = request.getParameter("width");
+    height = request.getParameter("height");
+    weight = request.getParameter("weight");
+    amount = request.getParameter("amount");
+    toName = request.getParameter("toName");
+    toPhone = request.getParameter("toPhone");
+    toAddress1 = request.getParameter("toAddress1");
+    toAddress2 = request.getParameter("toAddress2");
+    toState = request.getParameter("toState");
+    toDistrict = request.getParameter("toDistrict");
+    toPincode = request.getParameter("toPincode");
+    fromName = request.getParameter("fromName");
+    fromPhone = request.getParameter("fromPhone");
+    fromAddress1 = request.getParameter("fromAddress1");
+    fromAddress2 = request.getParameter("fromAddress2");
+    fromState = request.getParameter("fromState");
+    fromDistrict = request.getParameter("fromDistrict");
+     fromPincode = request.getParameter("fromPincode");
     
     java.util.Date date = new java.util.Date();  
+    SimpleDateFormat today = new SimpleDateFormat("dd-MMM-yyyy");
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
     SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm:ss");
     
+    nowDate = today.format(date);
+    nowTime = timeFormat.format(date);
+    
         
-    String sql = "SELECT consignment_id FROM ( SELECT CONCAT('PKG',FLOOR(RAND() * 99999999)) AS consignment_id UNION SELECT CONCAT('PKG',FLOOR(RAND() * 99999999)) AS consignment_id ) AS consignment_details WHERE consignment_id NOT IN (SELECT consignment_id FROM consignment_details) LIMIT 1";
+    String sql = "SELECT consignment_id FROM ( SELECT CONCAT('PKG',FLOOR(RAND() * 99999999),'IN') AS consignment_id UNION SELECT CONCAT('PKG',FLOOR(RAND() * 99999999),'IN') AS consignment_id ) AS consignment_details WHERE consignment_id NOT IN (SELECT consignment_id FROM consignment_details) LIMIT 1";
     PreparedStatement st=conn.prepareStatement(sql);
 
     ResultSet rs=st.executeQuery();
     rs.next();
-    String consignmentId = rs.getString("consignment_id");
+    consignmentId = rs.getString("consignment_id");
 
     sql = "INSERT INTO consignment_details(consignment_id,book_on,booked_at,branch_id,length,width,height,weight,amount,to_name,to_phone,to_address1,to_address2,to_state,to_district,to_pincode,from_name,from_phone,from_address1,from_address2,from_state,from_district,from_pincode) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
     st=conn.prepareStatement(sql);
     st.setString(1,consignmentId);
     st.setString(2,dateFormat.format(date));
-    st.setString(3,timeFormat.format(date));
+    st.setString(3,nowTime);
     st.setString(4,String.valueOf(session.getAttribute("branchUsername")));
     st.setString(5,length);
     st.setString(6,width);
@@ -72,12 +79,37 @@
     st.setString(21,fromState);
     st.setString(22,fromDistrict);
     st.setString(23,fromPincode);
+    st.executeUpdate();  
     
-        
-    st.executeUpdate();   
+    sql = "SELECT name FROM branch_details WHERE branch_id=?";
+    st=conn.prepareStatement(sql);
+    st.setString(1,String.valueOf(session.getAttribute("branchUsername")));
+    rs=st.executeQuery();
+    rs.next();
+    branchName = rs.getString("name");
+    
+    sql = "INSERT INTO consignment_tracker(consignment_id,date,time,status,remarks) VALUES (?,?,?,?,?)";
+    st=conn.prepareStatement(sql);
+    st.setString(1,consignmentId); 
+    st.setString(2,dateFormat.format(date));
+    st.setString(3,nowTime);
+    st.setString(4,"Booked");
+    st.setString(5,"at "+branchName);
+    st.executeUpdate(); 
+    
+    sql = "INSERT INTO consignment_inventory(consignment_id,branch_id) VALUES (?,?)";
+    st=conn.prepareStatement(sql);
+    st.setString(1,consignmentId); 
+    st.setString(2,String.valueOf(session.getAttribute("branchUsername")));
+    st.executeUpdate(); 
+    
+    success = "success";
     
     conn.close();
     
+   }
+   else{
+        success=null;
    }
     
 %>
@@ -117,7 +149,7 @@
             <div class="card-body">
                 
             <% 
-            if(request.getParameter("submit")!=null && request.getMethod().equals("POST")){  
+            if(success!=null){  
             %>
                 <div class="alert alert-success alert-dismissible fade show col-md-8 col-xl-6 text-center mx-auto" style="margin-top: 20px;" role="alert">
                     <i class="bi bi-check-circle me-1"></i>
@@ -129,30 +161,31 @@
 
                         <fieldset style="all: revert; font-weight: 600;width: fit-content;" class="col-6">
                             <legend style="all: revert;">Consignment Tag:</legend>
-                            Consignment ID: AEGD74595WB <br>
-                            Weight: 15gm<br><br>
+                            Consignment ID: <%= consignmentId %> <br>
+                            Weight: <%= weight %>gm<br><br>
                             <u>Ship To:</u><br>
-                            Soura Sankar Mondal<br>
-                            Bali Kali Tala,<br>P.O & Dist- Hooghly,<br>
-                            Hooghly, West Bengal, 712103<br><br>
+                            <%= toName %><br>
+                            <%= toAddress1 %>,<br><% if(toAddress2.isEmpty()==false){ out.print(toAddress2);%>,<br><%} %>
+                            <%= toDistrict %>, <%= toState %>, <%= toPincode %><br><br>
                             <u>From:</u><br>
-                            Uday Sankar Mondal<br>
-                            Bali Kali Tala,<br>P.O & Dist- Hooghly,<br>
-                            Hooghly, West Bengal, 712103<br>                       
+                            <%= fromName %><br>
+                            <%= fromAddress1 %>,<br><% if(fromAddress2.isEmpty()==false){ out.print(fromAddress2);%>,<br><%} %>
+                            <%= fromDistrict %>, <%= fromState %>, <%= fromPincode %><br>                       
                         </fieldset>                    
                         <fieldset style="all: revert; font-weight: 600;width: fit-content;" class="col-6">
                             <legend style="all: revert;">Customer Receipt:</legend>
-                            Consignment ID: AEGD74595WB <br>
-                            Dimension: 12x14x9cm<br>
-                            Weight: 15gm<br>
-                            Amount: 125/-<br>
-                            Date & Time: 20-Nov-2021 13:45:47<br><br>
+                            Consignment ID: <%= consignmentId %> <br>
+                            Dimension: <%= length %>x<%= width %>x<%= height %>cm<br>
+                            Weight: <%= weight %>gm<br>
+                            Amount: <%= amount %>/-<br>
+                            Booked at: <%= branchName %><br>
+                            Date & Time: <%= nowDate %> <%= nowTime %><br><br>
                             <u>Ship To:</u><br>
-                            Soura Sankar Mondal<br>
-                            Bali Kali Tala,<br>P.O & Dist- Hooghly,<br>
-                            Hooghly, West Bengal, 712103<br><br>
+                            <%= toName %><br>
+                            <%= toAddress1 %>,<br><% if(toAddress2.isEmpty()==false){ out.print(toAddress2);%>,<br><%} %>
+                            <%= toDistrict %>, <%= toState %>, <%= toPincode %><br><br>
                             <u>From:</u><br>
-                            Uday Sankar Mondal
+                            <%= fromName %>
                         </fieldset>
 
                     </div>
