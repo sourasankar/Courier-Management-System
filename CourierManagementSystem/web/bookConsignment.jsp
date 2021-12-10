@@ -41,7 +41,7 @@
     java.util.Date date = new java.util.Date();  
     SimpleDateFormat today = new SimpleDateFormat("dd-MMM-yyyy");
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-    SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm:ss");
+    SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
     
     nowDate = today.format(date);
     nowTime = timeFormat.format(date);
