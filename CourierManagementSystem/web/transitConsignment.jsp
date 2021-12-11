@@ -259,6 +259,10 @@
     
   </main><!-- End #main -->
   
+    <%
+      conn.close();
+    %>
+  
   <%@include file="assets/jsp/footer.jsp"%>
 
 </body>
