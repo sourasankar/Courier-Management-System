@@ -48,13 +48,14 @@
         ResultSet rs=st.executeQuery();
         rs.next();
 
-        sql = "INSERT INTO employee_details (employee_id,branch_id,name,phone,dob) VALUES (?,?,?,?,?);";
+        sql = "INSERT INTO employee_details (employee_id,branch_id,name,phone,dob,password) VALUES (?,?,?,?,?,?);";
         st=conn.prepareStatement(sql);
         st.setString(1,rs.getString("employee_id"));
         st.setString(2,String.valueOf(session.getAttribute("branchUsername")));
         st.setString(3,employeeName);
         st.setString(4,employeePhone);
         st.setString(5,employeeDob);
+        st.setString(6,"123456789");
         
         st.executeUpdate();
         
