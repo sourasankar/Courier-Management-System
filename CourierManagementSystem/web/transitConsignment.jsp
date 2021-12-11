@@ -116,7 +116,7 @@
 
                             String nowTime = timeFormat.format(date);
 
-                            sql = "INSERT INTO consignment_tracker(consignment_id,date,time,status,remarks,to_location) VALUES (?,?,?,?,?)";
+                            sql = "INSERT INTO consignment_tracker(consignment_id,date,time,status,remarks,to_location) VALUES (?,?,?,?,?,?)";
                             st=conn.prepareStatement(sql);
                             st.setString(1,request.getParameter("transitConsignment"));
                             st.setString(2,dateFormat.format(date));
