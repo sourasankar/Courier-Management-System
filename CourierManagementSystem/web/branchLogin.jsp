@@ -24,13 +24,11 @@
         ResultSet rs=st.executeQuery();
         if(rs.next()){
             if(rs.getString("password").equals(branchPassword)){
-                out.print("<script>alert('Logged In')</script>");
                 session.setAttribute("branchUsername", branchUsername);
                 session.setAttribute("branchName", rs.getString("name"));
                 response.sendRedirect("branchDashboard.jsp");
             }
             else{
-//                out.print("<script>alert('Wrong Password')</script>");
                 errorMsg = "Password not matched";
             }
         }
@@ -102,14 +100,12 @@
                       <label for="branchUsername" class="form-label">Username</label>
                       <div class="input-group">
                           <input type="text" name="branchUsername" class="form-control" id="branchUsername" value="<%= branchUsername %>" required>
-<!--                        <div class="invalid-feedback">Please enter your username.</div>-->
                       </div>
                     </div>
 
                     <div class="col-12">
                       <label for="branchPassword" class="form-label">Password</label>
                       <input type="password" name="branchPassword" class="form-control" id="branchPassword" value="<%= branchPassword %>" required>
-<!--                      <div class="invalid-feedback">Please enter your password!</div>-->
                     </div>
 
                     

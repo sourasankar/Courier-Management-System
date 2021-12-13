@@ -4,6 +4,12 @@
     Author     : soura
 --%>
 
+<%
+    if(session.getAttribute("employeeUsername")==null){
+        response.sendRedirect("employeeLogin.jsp");
+    }
+    else{
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -165,3 +171,4 @@
 </body>
 
 </html>
+<% } %>

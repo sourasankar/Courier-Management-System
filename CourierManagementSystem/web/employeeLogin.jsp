@@ -4,6 +4,49 @@
     Author     : soura
 --%>
 
+<%!
+    String employeeUsername,employeePassword,errorMsg;
+%>
+<%@page import="java.sql.*"%>
+<%
+    if(request.getParameter("submit")!=null && request.getMethod().equals("POST")){
+        
+        //Data from FORM
+        employeeUsername = request.getParameter("employeeUsername");
+        employeePassword = request.getParameter("employeePassword");
+        
+%>
+        <%@include file="assets/jsp/dbConnection.jsp"%>
+<%
+        String sql = "SELECT name,password FROM employee_details WHERE employee_id=?";
+        PreparedStatement st=conn.prepareStatement(sql);
+        st.setString(1,employeeUsername);
+        
+        ResultSet rs=st.executeQuery();
+        if(rs.next()){
+            if(rs.getString("password").equals(employeePassword)){
+                session.setAttribute("employeeUsername", employeeUsername);
+                session.setAttribute("employeeName", rs.getString("name"));
+                response.sendRedirect("employeeDashboard.jsp");
+            }
+            else{
+                errorMsg = "Password not matched";
+            }
+        }
+        else{
+            errorMsg = "Account not found";
+        }
+        
+        conn.close();
+        
+    }
+    else{
+        employeeUsername = "";
+        employeePassword = "";
+        errorMsg = null;
+    }
+%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,21 +84,28 @@
                     <h5 class="card-title text-center pb-0 fs-4">Employee Login</h5>
                     <p class="text-center small">Enter your username & password to login</p>
                   </div>
+                    <%
+                        if(errorMsg!=null){
+                    %>
+                    <div class="alert alert-danger text-center" style="padding: 1px 20px;font-weight: 600;" role="alert">
+                        <i class="bi bi-exclamation-triangle"></i> <%= errorMsg %>
+                    </div>
+                    <%
+                      }  
+                    %>
 
                     <form method="POST" action="employeeLogin.jsp" class="row g-3">
 
                     <div class="col-12">
                       <label for="employeeUsername" class="form-label">Username</label>
                       <div class="input-group">
-                        <input type="text" name="employeeUsername" class="form-control" id="employeeUsername" required>
-                        <div class="invalid-feedback">Please enter your username.</div>
+                        <input type="text" name="employeeUsername" class="form-control" id="employeeUsername" value="<%= employeeUsername %>" required>
                       </div>
                     </div>
 
                     <div class="col-12">
                       <label for="employeePassword" class="form-label">Password</label>
-                      <input type="password" name="employeePassword" class="form-control" id="employeePassword" required>
-                      <div class="invalid-feedback">Please enter your password!</div>
+                      <input type="password" name="employeePassword" class="form-control" id="employeePassword" value="<%= employeePassword %>" required>
                     </div>
 
                     
