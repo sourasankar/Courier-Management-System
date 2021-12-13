@@ -6,7 +6,8 @@
 
 <%
     
-    session.invalidate();
-    response.sendRedirect("../../employeeLogin.jsp");
+    session.removeAttribute("employeeUsername");
+    session.removeAttribute("employeeName");
+    response.sendRedirect("../../branchLogin.jsp");
 
 %>

@@ -6,7 +6,8 @@
 
 <%
     
-    session.invalidate();
+    session.removeAttribute("branchUsername");
+    session.removeAttribute("branchName");
     response.sendRedirect("../../branchLogin.jsp");
 
 %>
