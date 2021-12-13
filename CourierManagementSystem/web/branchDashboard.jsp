@@ -106,7 +106,7 @@
                       <h5 class="card-title">Inventory</h5>
 
                       <div class="d-flex align-items-center">
-                          <div class="card-icon rounded-circle d-flex align-items-center justify-content-center" style="color: #4154f1;background: #f6f6fe;">
+                          <div class="card-icon rounded-circle d-flex align-items-center justify-content-center" style="color: #e91e63;background: #ffe5ee;">
                           <i class="bi bi-boxes"></i>
                         </div>
                         <div class="ps-3">
