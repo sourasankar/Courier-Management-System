@@ -10,6 +10,16 @@
     }
     else{
 %>
+<%@page import="java.sql.*, java.util.regex.*"%>
+<%@include file="assets/jsp/dbConnection.jsp"%>
+<%
+    String sql = "SELECT COUNT(*) as delivery_count FROM consignment_delivery WHERE employee_id=?";
+    PreparedStatement st=conn.prepareStatement(sql);
+    st.setString(1,String.valueOf(session.getAttribute("employeeUsername")));
+    ResultSet rs=st.executeQuery();
+    rs.next();
+    String countDelivery = rs.getString("delivery_count");
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -52,7 +62,7 @@
                           <i class="bi bi-boxes"></i>
                         </div>
                         <div class="ps-3">
-                          <h6>12</h6>
+                          <h6><%= countDelivery %></h6>
                         </div>
                       </div>
 
