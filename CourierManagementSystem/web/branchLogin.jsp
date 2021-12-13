@@ -72,7 +72,7 @@
               <div class="d-flex justify-content-center py-4">
                 <a href="javascript:void(0)" class="logo d-flex align-items-center w-auto">
                   <img src="assets/img/logo.png" alt="">
-                  <span class="d-none d-lg-block">CMS Admin</span>
+                  <span>CMS Admin</span>
                 </a>
               </div>
 
