@@ -3,10 +3,6 @@
     Created on : Nov 22, 2021, 7:44:48 PM
     Author     : soura
 --%>
-<%
-  response.setHeader("Cache-Control","no-cache");
-  response.setHeader("Cache-Control","no-store");  
-%>
 
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <link rel="shortcut icon" href="assets/img/favicon.png">

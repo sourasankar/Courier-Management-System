@@ -6,7 +6,8 @@
 <%
     if(session.getAttribute("branchUsername")==null){
         response.sendRedirect("branchLogin.jsp");
-    }  
+    }
+    else{
 %>
 <%@page import="java.sql.*, java.util.regex.*"%>
 <%@include file="assets/jsp/dbConnection.jsp"%>
@@ -167,3 +168,4 @@
 </body>
 
 </html>
+<% } %>

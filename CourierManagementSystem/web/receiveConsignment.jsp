@@ -6,7 +6,7 @@
 <%
     if(session.getAttribute("branchUsername")==null){
         response.sendRedirect("branchLogin.jsp");
-    }  
+    }else{  
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -117,3 +117,4 @@
 </body>
 
 </html>
+<% } %>

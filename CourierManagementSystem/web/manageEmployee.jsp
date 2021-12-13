@@ -7,7 +7,7 @@
 <%
     if(session.getAttribute("branchUsername")==null){
         response.sendRedirect("branchLogin.jsp");
-    }  
+    }else{  
 %>
 <%!
     String employeeName,employeePhone,employeeDob,addEmployee,errorNameMsg,errorPhoneMsg;
@@ -222,3 +222,4 @@
 </body>
 
 </html>
+<% } %>
