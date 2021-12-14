@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2021 at 08:28 AM
+-- Generation Time: Dec 14, 2021 at 08:20 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.1
 
@@ -66,6 +66,13 @@ CREATE TABLE `consignment_delivery` (
   `employee_id` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `consignment_delivery`
+--
+
+INSERT INTO `consignment_delivery` (`id`, `consignment_id`, `employee_id`) VALUES
+(6, 'PKG12866603IN', 'EMP115828');
+
 -- --------------------------------------------------------
 
 --
@@ -103,6 +110,7 @@ CREATE TABLE `consignment_details` (
 --
 
 INSERT INTO `consignment_details` (`consignment_id`, `book_on`, `booked_at`, `branch_id`, `length`, `width`, `height`, `weight`, `amount`, `to_name`, `to_phone`, `to_address1`, `to_address2`, `to_state`, `to_district`, `to_pincode`, `from_name`, `from_phone`, `from_address1`, `from_address2`, `from_state`, `from_district`, `from_pincode`) VALUES
+('PKG12380691IN', '2021-12-13', '18:25:20', 'wbhooghlyin', '4', '65', '64', '54', '546', 'srebvse servser', '9876543210', 'gzstbhdrzb drtzb rav', 'arewnzh', 'West Bengal', 'Hooghly', '789456', 'kjfdsijnf sndfsdf', '9876543210', 'dsgn rdaynh adryna', 'rya ndy bad brd', 'West Bengal', 'Hooghly', '789456'),
 ('PKG12866603IN', '2021-12-10', '12:09:46', 'wbhooghlyin', '10', '12', '7', '200', '240', 'Soura Sankar Mondal', '9876543210', 'Bali Kali Tala', 'P.O & Dist- Hooghly', 'West Bengal', 'Hooghly', '712103', 'Uday Sankar Mondal', '9876543210', 'xyz xyz', '', 'West Bengal', 'Hooghly', '789465'),
 ('PKG29487079IN', '2021-12-10', '12:15:07', 'wbhooghlyin', '12', '12', '12', '123', '564', 'dsads sDg', '9876543210', 'hgdff dfh ', 'gdsztg', 'Odisha', 'Puri', '987654', 'xgh dfhgdfg', '9876543210', 'vsdg asg', '', 'Odisha', 'Khordha', '987635'),
 ('PKG42801253IN', '2021-12-11', '11:50:30', 'wbkolkatain', '21', '21', '212', '21', '21', 'hgf', '9876543210', 'vgjvghj', 'jvhgjvghj', 'West Bengal', 'Kolkata', '987654', 'jcvfgh', '9876543210', 'g', 'gcjg', 'Odisha', 'Khordha', '987654'),
@@ -129,14 +137,12 @@ CREATE TABLE `consignment_inventory` (
 --
 
 INSERT INTO `consignment_inventory` (`id`, `consignment_id`, `branch_id`) VALUES
-(1, 'PKG79830938IN', 'wbhooghlyin'),
-(2, 'PKG12866603IN', 'wbhooghlyin'),
-(3, 'PKG87942798IN', 'wbhooghlyin'),
 (4, 'PKG29487079IN', 'wbhooghlyin'),
 (5, 'PKG80144801IN', 'wbhooghlyin'),
 (6, 'PKG42801253IN', 'wbkolkatain'),
 (7, 'PKG96680280IN', 'wbkolkatain'),
-(8, 'PKG83954611IN', 'wbkolkatain');
+(8, 'PKG83954611IN', 'wbkolkatain'),
+(9, 'PKG12380691IN', 'wbhooghlyin');
 
 -- --------------------------------------------------------
 
@@ -166,7 +172,19 @@ INSERT INTO `consignment_tracker` (`id`, `consignment_id`, `date`, `time`, `to_l
 (7, 'PKG80144801IN', '2021-12-11', '11:48:07', NULL, 'Booked', 'at Hooghly DHO'),
 (8, 'PKG42801253IN', '2021-12-11', '11:50:30', NULL, 'Booked', 'at Kolkata SHO'),
 (9, 'PKG96680280IN', '2021-12-11', '11:52:34', NULL, 'Booked', 'at Kolkata SHO'),
-(10, 'PKG83954611IN', '2021-12-11', '11:59:23', NULL, 'Booked', 'at Kolkata SHO');
+(10, 'PKG83954611IN', '2021-12-11', '11:59:23', NULL, 'Booked', 'at Kolkata SHO'),
+(15, 'PKG12866603IN', '2021-12-13', '17:57:47', NULL, 'Out For Delivery', 'Soura Sankar Mondal (9876543210)'),
+(16, 'PKG79830938IN', '2021-12-13', '18:02:28', NULL, 'Out For Delivery', 'Soura Sankar Mondal (9876543210)'),
+(20, 'PKG79830938IN', '2021-12-13', '18:24:17', NULL, 'Delivered', 'at Home'),
+(21, 'PKG12380691IN', '2021-12-13', '18:25:20', NULL, 'Booked', 'at Hooghly DHO'),
+(22, 'PKG87942798IN', '2021-12-14', '12:31:39', 'wbkolkatain', 'In Transit', 'to Kolkata SHO'),
+(23, 'PKG87942798IN', '2021-12-14', '12:41:45', NULL, 'Received', 'at Kolkata SHO'),
+(24, 'PKG87942798IN', '2021-12-14', '12:42:38', 'orkhordhain', 'In Transit', 'to Khordha SHO'),
+(25, 'PKG87942798IN', '2021-12-14', '12:43:37', NULL, 'Received', 'at Khordha SHO'),
+(26, 'PKG87942798IN', '2021-12-14', '12:43:59', 'orpuriin', 'In Transit', 'to Puri DHO'),
+(27, 'PKG87942798IN', '2021-12-14', '12:44:27', NULL, 'Received', 'at Puri DHO'),
+(28, 'PKG87942798IN', '2021-12-14', '12:45:05', NULL, 'Out For Delivery', 'Soura Sankar (6543210789)'),
+(29, 'PKG87942798IN', '2021-12-14', '12:45:49', NULL, 'Delivered', 'done');
 
 -- --------------------------------------------------------
 
@@ -949,6 +967,7 @@ CREATE TABLE `employee_details` (
 
 INSERT INTO `employee_details` (`employee_id`, `branch_id`, `name`, `phone`, `dob`, `password`) VALUES
 ('EMP115828', 'WBHOOGHLYIN', 'Soura Sankar Mondal', '9876543210', '2000-06-08', '123456789'),
+('EMP499863', 'orpuriin', 'Soura Sankar', '6543210789', '2013-05-01', '123456789'),
 ('EMP732110', 'WBHOOGHLYIN', 'uday sankar mondal', '4108756045', '2021-12-14', '123456789');
 
 --
@@ -1012,19 +1031,19 @@ ALTER TABLE `employee_details`
 -- AUTO_INCREMENT for table `consignment_delivery`
 --
 ALTER TABLE `consignment_delivery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `consignment_inventory`
 --
 ALTER TABLE `consignment_inventory`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `consignment_tracker`
 --
 ALTER TABLE `consignment_tracker`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `districts`
