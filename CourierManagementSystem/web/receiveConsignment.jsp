@@ -76,6 +76,7 @@
                     PreparedStatement st2=conn.prepareStatement(sql2);
                     st2.setString(1,request.getParameter("consignmentId"));
                     ResultSet rs2=st2.executeQuery();
+                    rs2.next();
             %>
             
             <div class="card">
@@ -120,7 +121,7 @@
 
                             sql = "SELECT name FROM branch_details WHERE branch_id=?";
                             st=conn.prepareStatement(sql);
-                            st.setString(1,request.getParameter("receiveConsignment"));
+                            st.setString(1,String.valueOf(session.getAttribute("branchUsername")));
                             ResultSet rs=st.executeQuery();
                             rs.next();
 
