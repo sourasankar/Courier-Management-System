@@ -3,7 +3,9 @@
     Created on : Dec 13, 2021, 6:32:15 PM
     Author     : soura
 --%>
-
+<%@page import="java.sql.*, java.util.regex.*"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@include file="assets/jsp/dbConnection.jsp"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +26,7 @@
       <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
         <div class="container">
           <div class="row justify-content-center">
-              <%
+                <%
                     if(request.getParameter("submit")!=null && request.getMethod().equals("POST")){
                 %>
                 <div class="d-flex flex-column align-items-center justify-content-center">
@@ -37,7 +39,7 @@
                     </div>
                       <div class="card mb-3" style="width: 100%;">
                           <div class="card-body" style="margin-top: 30px;">
-                          <div class="col-md-10 offset-md-1 col-xxl-8 offset-xxl-2">
+                              <div class="col-lg-10 offset-lg-1" style="overflow: auto;">
                               <table class="table table-striped table-bordered">
                                 <thead>
                                   <tr>
@@ -50,96 +52,26 @@
                                   </tr>
                                 </thead>
                                 <tbody>
-
+                                   <%
+                                        String sql = "SELECT * FROM consignment_tracker WHERE consignment_id=? ORDER BY date,time";
+                                        PreparedStatement st=conn.prepareStatement(sql);
+                                        st.setString(1,request.getParameter("consignmentId"));
+                                        ResultSet rs=st.executeQuery();
+                                        SimpleDateFormat today = new SimpleDateFormat("dd-MMM-yyyy");
+                                        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                                        int i = 1;                            
+                                        while(rs.next()){
+                                            java.util.Date date = dateFormat.parse(rs.getString("date"));
+                                   %>
                                   <tr class="align-middle">
-                                    <th scope="row">1</th>
-                                    <td>PKG12380691IN</td>
-                                    <td>13-12-2021</td>
-                                    <td>19:12:30</td>
-                                    <td>Booked</td>
-                                    <td>at Hooghly DHO</td>
+                                    <th scope="row"><%= i %></th>
+                                    <td><%= rs.getString("consignment_id") %></td>
+                                    <td><%= today.format(date) %></td>
+                                    <td><%= rs.getString("time") %></td>
+                                    <td><%= rs.getString("status") %></td>
+                                    <td><%= rs.getString("remarks") %></td>
                                   </tr>
-                                  <tr class="align-middle">
-                                    <th scope="row">1</th>
-                                    <td>PKG12380691IN</td>
-                                    <td>13-12-2021</td>
-                                    <td>19:12:30</td>
-                                    <td>Booked</td>
-                                    <td>at Hooghly DHO</td>
-                                  </tr><tr class="align-middle">
-                                    <th scope="row">1</th>
-                                    <td>PKG12380691IN</td>
-                                    <td>13-12-2021</td>
-                                    <td>19:12:30</td>
-                                    <td>Booked</td>
-                                    <td>at Hooghly DHO</td>
-                                  </tr><tr class="align-middle">
-                                    <th scope="row">1</th>
-                                    <td>PKG12380691IN</td>
-                                    <td>13-12-2021</td>
-                                    <td>19:12:30</td>
-                                    <td>Booked</td>
-                                    <td>at Hooghly DHO</td>
-                                  </tr><tr class="align-middle">
-                                    <th scope="row">1</th>
-                                    <td>PKG12380691IN</td>
-                                    <td>13-12-2021</td>
-                                    <td>19:12:30</td>
-                                    <td>Booked</td>
-                                    <td>at Hooghly DHO</td>
-                                  </tr><tr class="align-middle">
-                                    <th scope="row">1</th>
-                                    <td>PKG12380691IN</td>
-                                    <td>13-12-2021</td>
-                                    <td>19:12:30</td>
-                                    <td>Booked</td>
-                                    <td>at Hooghly DHO</td>
-                                  </tr>
-                                  <tr class="align-middle">
-                                    <th scope="row">1</th>
-                                    <td>PKG12380691IN</td>
-                                    <td>13-12-2021</td>
-                                    <td>19:12:30</td>
-                                    <td>Booked</td>
-                                    <td>at Hooghly DHO</td>
-                                  </tr>
-                                  <tr class="align-middle">
-                                    <th scope="row">1</th>
-                                    <td>PKG12380691IN</td>
-                                    <td>13-12-2021</td>
-                                    <td>19:12:30</td>
-                                    <td>Booked</td>
-                                    <td>at Hooghly DHO</td>
-                                  </tr>
-                                  <tr class="align-middle">
-                                    <th scope="row">1</th>
-                                    <td>PKG12380691IN</td>
-                                    <td>13-12-2021</td>
-                                    <td>19:12:30</td>
-                                    <td>Booked</td>
-                                    <td>at Hooghly DHO</td>
-                                  </tr>
-                                  <tr class="align-middle">
-                                    <th scope="row">1</th>
-                                    <td>PKG12380691IN</td>
-                                    <td>13-12-2021</td>
-                                    <td>19:12:30</td>
-                                    <td>Booked</td>
-                                    <td>at Hooghly DHO</td>
-                                  </tr>
-                                  <tr class="align-middle">
-                                    <th scope="row">1</th>
-                                    <td>PKG12380691IN</td>
-                                    <td>13-12-2021</td>
-                                    <td>19:12:30</td>
-                                    <td>Booked</td>
-                                    <td>at Hooghly DHO</td>
-                                  </tr>
-                                  
-                                  
-                                  
-                                  
-
+                                  <% i++; }%>
                                 </tbody>
                               </table>
                           </div>
@@ -166,7 +98,7 @@
                     <h5 class="card-title text-center pb-0 fs-4">Consignment ID:</h5>
                   </div>
                     
-                    <form method="POST" action="#" class="row g-3">
+                    <form method="POST" action="trackConsignment.jsp" class="row g-3">
 
                         <div class="col-12">
                           <div class="input-group">
