@@ -41,7 +41,7 @@
 
     <div class="pagetitle">
       <h1>Deliver Consignment</h1>
-    </div><!-- End Page Title -->
+    </div>
 
       <div class="row">
         <div class="col-12">
@@ -208,7 +208,7 @@
 
         </div>        
     
-  </main><!-- End #main -->
+  </main>
   
     <%
       conn.close();

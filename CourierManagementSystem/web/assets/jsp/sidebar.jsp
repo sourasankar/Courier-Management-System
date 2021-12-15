@@ -14,14 +14,14 @@
           <i class="bi bi-graph-up-arrow"></i>
           <span>Dashboard</span>
         </a>
-      </li><!-- End Dashboard Nav -->
+      </li>
       
       <li class="nav-item">
         <a class="nav-link collapsed" href="bookConsignment.jsp">
           <i class="bi bi-cart-plus"></i>
           <span>Book Consignment</span>
         </a>
-      </li><!-- End F.A.Q Page Nav -->
+      </li>
       
       <li class="nav-item">
         <a class="nav-link collapsed" href="receiveConsignment.jsp">
@@ -50,27 +50,6 @@
         <a class="nav-link collapsed" href="manageEmployee.jsp">
           <i class="bi bi-people"></i>
           <span>Manage Employee</span>
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="branchLogin.jsp">
-          <i class="bi bi-box-arrow-in-right"></i>
-          <span>Branch Login</span>
-        </a>
-      </li><!-- End Login Page Nav -->
-      
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="employeeLogin.jsp">
-          <i class="bi bi-box-arrow-in-right"></i>
-          <span>Employee Login</span>
-        </a>
-      </li>
-      
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="employeeDashboard.jsp">
-          <i class="bi bi-box-arrow-in-right"></i>
-          <span>Employee Dashboard</span>
         </a>
       </li>
 

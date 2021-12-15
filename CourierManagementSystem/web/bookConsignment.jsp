@@ -139,7 +139,7 @@
 
     <div class="pagetitle">
       <h1>Book Consignment</h1>
-    </div><!-- End Page Title -->
+    </div>
 
       <div class="row">
         <div class="col-12">
@@ -199,7 +199,7 @@
             else{
             %>
             
-              <!-- Multi Columns Form -->
+              <!-- Package Details Form -->
               <form method="POST" action="bookConsignment.jsp">
                   
                   <h5 class="card-title">Package Details</h5>
@@ -386,7 +386,7 @@
                     
                 </div>                           
 
-              </form><!-- End Multi Columns Form -->
+              </form><!-- Package Details Form -->
             
             <%  
             }
@@ -399,7 +399,7 @@
         </div>        
     
       </div>
-  </main>     <!-- End #main -->
+  </main> 
   
     <script>
 

@@ -100,7 +100,7 @@
 
     <div class="pagetitle">
       <h1>Manage Employee</h1>
-    </div><!-- End Page Title -->
+    </div>
     
         <div class="row">
             
@@ -109,7 +109,6 @@
                  <div class="card-body">
                    <h5 class="card-title">Employees</h5>
 
-                   <!-- Default Table -->
                    <table class="table table-striped table-bordered">
                      <thead>
                        <tr>
@@ -140,10 +139,10 @@
                          <td>
                              <div style="display: flex;justify-content: space-evenly;">
                                 <form method="POST" action="manageEmployee.jsp">
-                                    <button type="submit" class="btn btn-primary" name="edit" value="<%= rs.getString("employee_id") %>"><i class="bi bi-pencil-square"></i></button>
+                                    <button type="button" class="btn btn-primary" name="edit" value="<%= rs.getString("employee_id") %>"><i class="bi bi-pencil-square"></i></button>
                                 </form>
                                 <form method="POST" action="manageEmployee.jsp">
-                                    <button type="submit" class="btn btn-danger" name="delete" value="<%= rs.getString("employee_id") %>"><i class="bi bi-trash"></i></button>
+                                    <button type="button" class="btn btn-danger" name="delete" value="<%= rs.getString("employee_id") %>"><i class="bi bi-trash"></i></button>
                                 </form> 
                             </div>
                          </td>
@@ -154,7 +153,6 @@
                        %>
                      </tbody>
                    </table>
-                   <!-- End Default Table Example -->
                  </div>
                </div>
             </div>
@@ -211,7 +209,7 @@
 
         </div>
 
-  </main><!-- End #main -->
+  </main>
 
 
   <%@include file="assets/jsp/footer.jsp"%>

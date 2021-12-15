@@ -37,7 +37,7 @@
 
     <div class="pagetitle">
       <h1>Receive Consignment</h1>
-    </div><!-- End Page Title -->
+    </div>
 
       <div class="row">
         <div class="col-12">
@@ -46,7 +46,6 @@
           <div class="card">
             <div class="card-body" style="margin-top: 20px;">
 
-              <!-- Multi Columns Form -->
               <form method="POST" action="receiveConsignment.jsp">
                   
                 <div class="row g-3">
@@ -57,7 +56,7 @@
                     <button type="submit" id="submit" name="submit" value="submit" class="btn btn-primary col-6 offset-3 col-sm-4 offset-sm-4 col-md-2 offset-md-0 col-xl-1">Submit</button>
                 </div>
                   
-              </form><!-- End Multi Columns Form -->
+              </form>
 
             </div>
           </div>
@@ -153,7 +152,7 @@
 
         </div>        
     
-  </main><!-- End #main -->
+  </main>
 
   <%@include file="assets/jsp/footer.jsp"%>
 

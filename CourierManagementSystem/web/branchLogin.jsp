@@ -33,7 +33,6 @@
             }
         }
         else{
-//            out.print("<script>alert('Not Found')</script>");
             errorMsg = "Account not found";
         }
         

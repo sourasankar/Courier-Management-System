@@ -160,7 +160,7 @@
         </div>
     </section>
 
-  </main><!-- End #main -->
+  </main>
 
 
   <%@include file="assets/jsp/footer.jsp"%>

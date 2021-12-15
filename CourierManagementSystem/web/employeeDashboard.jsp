@@ -47,7 +47,7 @@
 
     <div class="pagetitle">
       <h1>Dashboard</h1>
-    </div><!-- End Page Title -->
+    </div>
     <section class="section dashboard">
         <div class="row">
 
@@ -73,7 +73,7 @@
         </div>
     </section>
 
-  </main><!-- End #main -->
+  </main>
 
 
   <%@include file="assets/jsp/footer.jsp"%>

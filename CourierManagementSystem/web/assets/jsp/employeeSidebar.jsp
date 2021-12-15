@@ -14,7 +14,7 @@
           <i class="bi bi-graph-up-arrow"></i>
           <span>Dashboard</span>
         </a>
-      </li><!-- End Dashboard Nav -->
+      </li>
       
       <li class="nav-item">
         <a class="nav-link collapsed" href="employeeDeliverConsignment.jsp">
