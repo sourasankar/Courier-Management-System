@@ -5099,9 +5099,9 @@
 												"$ref": "AAAAAAF9y/OgZtJHEkc="
 											},
 											"font": "Arial;13;0",
-											"left": 22.55908203125,
+											"left": 24.72998046875,
 											"top": 5,
-											"width": 210.4091796875,
+											"width": 232.25146484375,
 											"height": 13,
 											"text": "SequenceDiagramBookingConsignment"
 										},
@@ -5114,7 +5114,7 @@
 											"font": "Arial;13;1",
 											"left": 5,
 											"top": 5,
-											"width": 12.55908203125,
+											"width": 14.72998046875,
 											"height": 13,
 											"text": "sd"
 										}
@@ -9549,11 +9549,60 @@
 								"$ref": "AAAAAAF9y/PIfdJUz3o="
 							},
 							"font": "Arial;13;0",
-							"left": 640,
-							"top": 352,
+							"left": 704,
+							"top": 344,
 							"width": 249,
 							"height": 235,
 							"text": "Description:\nBranch Admin enters login credentials then system checks it if correct then system provides the GUI of system. Admin selects the consignment booking option and system provides the corresponding GUI. Then system asks for consignment details. Admin enters the consignment details. Now system generates a unique consignment id and saves the details to the database then generates customer receipt and consignment tag. Now admin prints those receipt and tag. Receipt handover to customer and the consignment tag is pasted to consignment package."
+						},
+						{
+							"_type": "UMLFrameView",
+							"_id": "AAAAAAF+GpPaT/rpAeM=",
+							"_parent": {
+								"$ref": "AAAAAAF9y/PIfdJUz3o="
+							},
+							"model": {
+								"$ref": "AAAAAAF9y/PIfdJUz3o="
+							},
+							"subViews": [
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAF+GpPaUPrqots=",
+									"_parent": {
+										"$ref": "AAAAAAF+GpPaT/rpAeM="
+									},
+									"font": "Arial;13;0",
+									"left": 108.341796875,
+									"top": 21,
+									"width": 214.87158203125,
+									"height": 13,
+									"text": "ActivityDiagramConsignmentBooking"
+								},
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAF+GpPaUPrr9v4=",
+									"_parent": {
+										"$ref": "AAAAAAF+GpPaT/rpAeM="
+									},
+									"font": "Arial;13;1",
+									"left": 85,
+									"top": 21,
+									"width": 18.341796875,
+									"height": 13,
+									"text": "act"
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 80,
+							"top": 16,
+							"width": 593,
+							"height": 808,
+							"nameLabel": {
+								"$ref": "AAAAAAF+GpPaUPrqots="
+							},
+							"frameTypeLabel": {
+								"$ref": "AAAAAAF+GpPaUPrr9v4="
+							}
 						}
 					]
 				}
